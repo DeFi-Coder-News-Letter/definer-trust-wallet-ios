@@ -1,14 +1,6 @@
-# Trust - Ethereum Wallet and Web3 DApp Browser for iOS
+# DeFiner - iOS - Powered By Trust Wallet
 
-[![Build Status](https://travis-ci.org/TrustWallet/trust-wallet-ios.svg?branch=master)](https://travis-ci.org/TrustWallet/trust-wallet-ios)
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/TrustWallet/trust-wallet-ios/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/TrustWallet/trust-wallet-ios/branches/master)
-[![License](https://img.shields.io/badge/license-GPL3-green.svg?style=flat)](https://github.com/TrustWallet/trust-wallet-ios/blob/master/LICENSE)
-
-[<img src="https://raw.githubusercontent.com/TrustWallet/trust-wallet-ios/master/resources/iphone_cover.png">](https://itunes.apple.com/us/app/trust-ethereum-wallet/id1288339409)
-
-[<img src=resources/app-store-badge.png height="88">](https://itunes.apple.com/us/app/trust-ethereum-wallet/id1288339409)
-
-Welcome to Trust's open source iOS app!
+Welcome to DeFiner's open source iOS app!
 
 ## Getting Started
 
