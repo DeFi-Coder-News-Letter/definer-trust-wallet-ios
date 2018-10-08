@@ -56,7 +56,7 @@
 "settings.donate.button.title" = "Donate";
 "settings.emailUs.button.title" = "Email Us";
 "settings.error.failedToSendEmail" = "Failed to send email. Make sure you have Mail app installed.";
-"settings.feedback.email.title" = "Trust Feedback";
+"settings.feedback.email.title" = "DeFiner Feedback";
 "settings.navigation.title" = "Settings";
 "settings.network.button.title" = "Network";
 "settings.openSourceDevelopment.label.title" = "Open Source Development";
@@ -65,7 +65,7 @@
 "settings.rateUsAppStore.button.title" = "Rate Us on App Store";
 "settings.reportBug.button.title" = "Report a Bug";
 "settings.security.label.title" = "Security";
-"settings.sourceCode.button.title" = "Source Code";
+"settings.sourceCode.button.title" = "White Paper";
 "settings.support.label.title" = "Support";
 "settings.termsOfService.button.title" = "Terms of Service";
 "settings.version.label.title" = "Version";
@@ -88,7 +88,7 @@
 "tokens.tabbar.item.title" = "Tokens";
 "transactions.tabbar.item.title" = "Transactions";
 "import.navigation.title" = "Import Wallet";
-"browser.tabbar.item.title" = "Browser";
+"browser.tabbar.item.title" = "DeFiner";
 "configureTransaction.data.label.title" = "Transaction Data (Optional)";
 "confirmPayment.data.label.title" = "Data";
 "ContractAddress" = "Contract Address";
@@ -283,7 +283,7 @@
 "Network" = "Network";
 "MultiCoinWallet" = "Multi-Coin Wallet";
 "LearnMore" = "Learn More";
-"settings.helpCenter.title" = "Help Center";
+"settings.helpCenter.title" = "Medium";
 "DailyUsage" = "Daily Usage";
 "DeferredDeepLinking" = "Deferred Deep Linking";
 "CrashReports" = "Crash Reports";

@@ -22,7 +22,7 @@ struct InCoordinatorViewModel {
 
     var browserBarItem: UITabBarItem {
         return UITabBarItem(
-            title: NSLocalizedString("browser.tabbar.item.title", value: "Browser", comment: ""),
+            title: NSLocalizedString("browser.tabbar.item.title", value: "DeFiner", comment: ""),
             image: R.image.dapps_icon(),
             selectedImage: nil
         )

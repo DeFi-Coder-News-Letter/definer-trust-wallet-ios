@@ -116,24 +116,18 @@ class EtherKeystore: Keystore {
                 }
             }
         case .privateKey(let privateKey):
-            if let data = Data(hexString: privateKey),
-               let privateKeyData = PrivateKey(data: data) {
-                DispatchQueue.global(qos: .userInitiated).async {
-                    do {
-                        let wallet = try self.keyStore.import(privateKey: privateKeyData, password: newPassword, coin: coin)
-                        self.setPassword(newPassword, for: wallet)
-                        DispatchQueue.main.async {
-                            completion(.success(WalletInfo(type: .privateKey(wallet))))
-                        }
-                    } catch {
-                        DispatchQueue.main.async {
-                            completion(.failure(KeystoreError.failedToImportPrivateKey))
-                        }
+            let privateKeyData = PrivateKey(data: Data(hexString: privateKey)!)!
+            DispatchQueue.global(qos: .userInitiated).async {
+                do {
+                    let wallet = try self.keyStore.import(privateKey: privateKeyData, password: newPassword, coin: coin)
+                    self.setPassword(newPassword, for: wallet)
+                    DispatchQueue.main.async {
+                        completion(.success(WalletInfo(type: .privateKey(wallet))))
                     }
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(.failure(KeystoreError.failedToImportPrivateKey))
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(KeystoreError.failedToImportPrivateKey))
+                    }
                 }
             }
         case .mnemonic(let words, let passphrase, let derivationPath):
