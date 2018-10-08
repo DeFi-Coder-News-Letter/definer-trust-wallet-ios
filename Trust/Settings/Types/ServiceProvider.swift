@@ -64,9 +64,9 @@ enum URLServiceProvider {
         case .discord:
             return "https://discord.gg/ahPWeHk"
         case .helpCenter:
-            return "https://help.trustwalletapp.com"
+            return "https://medium.com/definerorg"
         case .sourceCode:
-            return "https://github.com/TrustWallet/trust-wallet-ios"
+            return "https://github.com/DeFinerOrg/whitepaper/wiki/DeFiner-White-Paper"
         case .privacyPolicy:
             return "https://trustwalletapp.com/privacy-policy.html"
         case .termsOfService:

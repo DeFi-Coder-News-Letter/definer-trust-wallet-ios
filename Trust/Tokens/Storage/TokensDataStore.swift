@@ -65,6 +65,16 @@ class TokensDataStore {
                 add(tokens: [token])
             }
         }
+        
+        let finAddress = EthereumAddress(string: "0x046c20c4d26c7a3edfb93b47abd811c0d83c245b")
+        let finToken = ERC20Token(
+            contract: finAddress.unsafelyUnwrapped,
+            name: "FIN",
+            symbol: "FIN",
+            decimals: 18,
+            coin: Coin.ethereum
+        )
+        addCustom(token: finToken)
     }
 
     func getToken(for address: Address) -> TokenObject? {

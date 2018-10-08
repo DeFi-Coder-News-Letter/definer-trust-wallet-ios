@@ -12,7 +12,7 @@ enum RPCServer {
 
     var id: String {
         switch self {
-        case .main: return "ethereum"
+        case .main: return "rinkeby"
         case .poa: return "poa"
         case .classic: return "classic"
         case .callisto: return "callisto"
@@ -22,7 +22,7 @@ enum RPCServer {
 
     var chainID: Int {
         switch self {
-        case .main: return 1
+        case .main: return 4 // rinkeby
         case .poa: return 99
         case .classic: return 61
         case .callisto: return 820
@@ -49,7 +49,7 @@ enum RPCServer {
 
     var name: String {
         switch self {
-        case .main: return "Ethereum"
+        case .main: return "Rinkeby"
         case .poa: return "POA Network"
         case .classic: return "Ethereum Classic"
         case .callisto: return "Callisto"
@@ -63,7 +63,7 @@ enum RPCServer {
 
     var symbol: String {
         switch self {
-        case .main: return "ETH"
+        case .main: return "ETH(Rinkeby)"
         case .classic: return "ETC"
         case .callisto: return "CLO"
         case .poa: return "POA"
@@ -78,7 +78,8 @@ enum RPCServer {
     var rpcURL: URL {
         let urlString: String = {
             switch self {
-            case .main: return "https://mainnet.infura.io/llyrtzQ3YhkdESt2Fzrk"
+            //case .main: return "https://mainnet.infura.io/llyrtzQ3YhkdESt2Fzrk"
+            case .main: return "https://rinkeby.infura.io/bn4ebIH5u0cXvSyXljAV"
             case .classic: return "https://etc-geth.0xinfra.com"
             case .callisto: return "https://clo-geth.0xinfra.com"
             case .poa: return "https://poa.infura.io"
@@ -105,7 +106,8 @@ enum RPCServer {
         // https://docs.ens.domains/en/latest/introduction.html#ens-on-ethereum
         switch self {
         case .main:
-            return EthereumAddress(string: "0x314159265dd8dbb310642f98f50c066173c1259b")!
+            //return EthereumAddress(string: "0x314159265dd8dbb310642f98f50c066173c1259b")!
+            return EthereumAddress(string: "0xe7410170f87102df0055eb195163a03b7f2bff4a")!
         case .classic, .poa, .callisto, .gochain:
             return EthereumAddress.zero
         }
