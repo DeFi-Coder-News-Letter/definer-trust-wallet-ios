@@ -85,7 +85,7 @@ enum URLServiceProvider {
         case .facebook: return R.image.settings_colorful_facebook()
         case .discord: return R.image.settings_colorful_discord()
         case .helpCenter: return R.image.settings_colorful_help_center()
-        case .sourceCode: return nil
+        case .sourceCode: return R.image.feed()
         case .privacyPolicy: return nil
         case .termsOfService: return nil
         case .infura: return nil

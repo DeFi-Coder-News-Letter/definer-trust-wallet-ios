@@ -189,7 +189,7 @@ class InCoordinator: Coordinator {
         navigationController.setViewControllers([tabBarController], animated: false)
         navigationController.setNavigationBarHidden(true, animated: false)
 
-        showTab(.browser(openURL: URL(string: "https://jupiter.definer.org")))
+        showTab(.browser(openURL: URL(string: "https://app.definer.org")))
         //showTab(.wallet(.none))
         keystore.recentlyUsedWallet = account
 

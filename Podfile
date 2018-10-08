@@ -3,6 +3,7 @@ inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Trust' do
+  project 'Definer'
   use_frameworks!
 
   pod 'BigInt', '~> 3.0'
@@ -26,7 +27,7 @@ target 'Trust' do
   pod 'TrezorCrypto'
   pod 'Branch'
   pod 'SAMKeychain'
-  pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :commit=>'f4e0ebb1b8fa4812637babe85ef975d116543dfd'
+  pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :commit=>'79969a5d9bc785619c583eda3dd257b8f83df3c8'
   pod 'URLNavigator'
   pod 'TrustWalletSDK', :git=>'https://github.com/TrustWallet/TrustSDK-iOS', :branch=>'master'
 

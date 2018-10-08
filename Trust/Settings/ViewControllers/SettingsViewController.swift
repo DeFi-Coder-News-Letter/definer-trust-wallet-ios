@@ -129,6 +129,7 @@ final class SettingsViewController: FormViewController, Coordinator {
 
             //+++ Section()
             <<< linkProvider(type: .helpCenter)
+            <<< linkProvider(type: .sourceCode)
 
             +++ Section()
             <<< shareWithFriendsRow()

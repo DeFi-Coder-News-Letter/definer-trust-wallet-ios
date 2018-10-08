@@ -19,7 +19,7 @@ public struct Constants {
     public static let supportEmail = "admin@definer.org"
 
     //public static let dappsBrowserURL = "https://dapps.trustwalletapp.com/"
-    public static let dappsBrowserURL = "https://jupiter.definer.org/"
+    public static let dappsBrowserURL = "https://app.definer.org/"
     //public static let dappsOpenSea = "https://opensea.io"
     public static let dappsOpenSea = "https://rinkeby.opensea.io"
     public static let dappsRinkebyOpenSea = "https://rinkeby.opensea.io"

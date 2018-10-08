@@ -55,7 +55,7 @@ PODS:
   - TrustWalletSDK (0.0.1):
     - Result
     - TrustCore
-  - TrustWeb3Provider (0.1.7)
+  - TrustWeb3Provider (0.3.0)
   - URLNavigator (2.0.6)
 
 DEPENDENCIES:
@@ -81,7 +81,7 @@ DEPENDENCIES:
   - TrustCore (from `https://github.com/TrustWallet/trust-core`, branch `master`)
   - TrustKeystore (from `https://github.com/TrustWallet/trust-keystore`, branch `master`)
   - TrustWalletSDK (from `https://github.com/TrustWallet/TrustSDK-iOS`, branch `master`)
-  - TrustWeb3Provider (from `https://github.com/TrustWallet/trust-web3-provider`, commit `f4e0ebb1b8fa4812637babe85ef975d116543dfd`)
+  - TrustWeb3Provider (from `https://github.com/TrustWallet/trust-web3-provider`, commit `79969a5d9bc785619c583eda3dd257b8f83df3c8`)
   - URLNavigator
 
 SPEC REPOS:
@@ -126,7 +126,7 @@ EXTERNAL SOURCES:
     :branch: master
     :git: https://github.com/TrustWallet/TrustSDK-iOS
   TrustWeb3Provider:
-    :commit: f4e0ebb1b8fa4812637babe85ef975d116543dfd
+    :commit: 79969a5d9bc785619c583eda3dd257b8f83df3c8
     :git: https://github.com/TrustWallet/trust-web3-provider
 
 CHECKOUT OPTIONS:
@@ -146,7 +146,7 @@ CHECKOUT OPTIONS:
     :commit: 99eb1456c6ebf1ce6a2dca15731ff99d69f93eb0
     :git: https://github.com/TrustWallet/TrustSDK-iOS
   TrustWeb3Provider:
-    :commit: f4e0ebb1b8fa4812637babe85ef975d116543dfd
+    :commit: 79969a5d9bc785619c583eda3dd257b8f83df3c8
     :git: https://github.com/TrustWallet/trust-web3-provider
 
 SPEC CHECKSUMS:
@@ -177,9 +177,9 @@ SPEC CHECKSUMS:
   TrustCore: 6c7deb45f03664d650da712bb5a19b33df0534a6
   TrustKeystore: c54b52ade9c97d31d23ded9ae2518c62dd73b5fe
   TrustWalletSDK: 12451433bda69bc07e5a27408449b1f4692879e4
-  TrustWeb3Provider: 50fa391bdf170feb43dd4419992931510a5751d8
+  TrustWeb3Provider: 5ef92d1c9fd8bc4db051a7abe1b4af34a4772caa
   URLNavigator: 2357a32f3b3787b748bf87deb927761f8b0f7f53
 
-PODFILE CHECKSUM: 30a4ddccde066176b63c4f1326409df048b754a1
+PODFILE CHECKSUM: cdec4c8545f3c8c93408e7b41d79fcffbcf22f68
 
 COCOAPODS: 1.5.3
