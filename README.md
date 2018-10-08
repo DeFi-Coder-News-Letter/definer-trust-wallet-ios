@@ -1,4 +1,4 @@
-# Definer - DApp for iOS
+# Definer - DApp for iOS - Powered By Trust Wallet
 
 Welcome to DeFiner's open source iOS app!
 
