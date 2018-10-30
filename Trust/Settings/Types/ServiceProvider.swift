@@ -68,9 +68,9 @@ enum URLServiceProvider {
         case .sourceCode:
             return "https://github.com/DeFinerOrg/whitepaper/wiki/DeFiner-White-Paper"
         case .privacyPolicy:
-            return "https://trustwalletapp.com/privacy-policy.html"
+            return "https://github.com/DeFinerOrg/DefinerApp/blob/master/PrivacyPolicy.md"
         case .termsOfService:
-            return "https://trustwalletapp.com/terms.html"
+            return "https://github.com/DeFinerOrg/DefinerApp/blob/master/PrivacyPolicy.md"
         case .infura:
             return "https://infura.io/"
         case .dappsOpenSea:

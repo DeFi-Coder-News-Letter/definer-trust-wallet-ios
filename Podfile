@@ -27,7 +27,7 @@ target 'Trust' do
   pod 'TrezorCrypto'
   pod 'Branch'
   pod 'SAMKeychain'
-  pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :commit=>'79969a5d9bc785619c583eda3dd257b8f83df3c8'
+  pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :commit=>'fa8d392179e1dec972d1ac4901c74c4de3da91b0'
   pod 'URLNavigator'
   pod 'TrustWalletSDK', :git=>'https://github.com/TrustWallet/TrustSDK-iOS', :branch=>'master'
 
