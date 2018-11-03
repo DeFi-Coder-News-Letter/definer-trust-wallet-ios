@@ -150,6 +150,8 @@ class InCoordinator: Coordinator {
 
         let tabBarController = TabBarController()
         tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.barTintColor = AppGlobalStyle.barTintColor
+        tabBarController.tabBar.tintColor = UIColor.white
 
         let browserCoordinator = BrowserCoordinator(session: session, keystore: keystore, navigator: navigator, sharedRealm: sharedRealm)
         browserCoordinator.delegate = self

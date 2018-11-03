@@ -11,7 +11,7 @@ class WalletViewController: UIViewController {
     fileprivate lazy var segmentController: UISegmentedControl = {
         let items = [
             R.string.localizable.tokens(),
-            R.string.localizable.collectibles(),
+            //R.string.localizable.collectibles(),
         ]
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = DetailsViewType.tokens.rawValue
