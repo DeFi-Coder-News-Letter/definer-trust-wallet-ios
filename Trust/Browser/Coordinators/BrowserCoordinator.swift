@@ -150,7 +150,10 @@ final class BrowserCoordinator: NSObject, Coordinator {
 
     func handleToolbar(for url: URL) {
         let isToolbarHidden = url.absoluteString != Constants.dappsBrowserURL
-        navigationController.isToolbarHidden = isToolbarHidden
+        //navigationController.isToolbarHidden = isToolbarHidden
+        
+        navigationController.isToolbarHidden = true
+        navigationController.navigationBar.isHidden = true
 
         if isToolbarHidden {
             rootViewController.select(viewType: .browser)

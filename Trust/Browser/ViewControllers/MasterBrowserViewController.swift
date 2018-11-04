@@ -73,8 +73,8 @@ final class MasterBrowserViewController: UIViewController {
     private func setupView() {
         let items: [UIBarButtonItem] = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(customView: segmentController),
-            UIBarButtonItem(customView: qrcodeButton),
+            //UIBarButtonItem(customView: segmentController),
+            //UIBarButtonItem(customView: qrcodeButton),
             UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
         ]

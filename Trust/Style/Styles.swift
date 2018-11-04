@@ -28,6 +28,9 @@ struct AppGlobalStyle {
     static let navigationBarTintColor = UIColor.white
     static let docPickerNavigationBarTintColor = Colors.darkBlue
     static let barTintColor = UIColor(red:0.00, green:0.63, blue:0.91, alpha:1.0)
+    static let selectedTintColor = UIColor.white
+    static let unSelectedTintColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.6)
+
 }
 
 struct StyleLayout {
