@@ -80,7 +80,8 @@ final class WalletCoordinator: Coordinator {
                     self.navigationController.topViewController?.hideLoading(animated: false)
                     switch mnemonicResult {
                     case .success(let words):
-                        self.pushBackup(for: account, words: words)
+                        self.walletCreated(wallet: self.getWalletInfo(for: result.value!), type: WalletDoneType.created)
+                        //self.pushBackup(for: account, words: words)
                     case .failure(let error):
                         self.navigationController.displayError(error: error)
                     }
@@ -179,6 +180,12 @@ final class WalletCoordinator: Coordinator {
             .name(initialName),
             .mainWallet(true),
         ])
+    }
+    
+    private func getWalletInfo(for account: Wallet) -> WalletInfo {
+        let type = WalletType.hd(account)
+        let wallet = WalletInfo(type: type, info: keystore.storage.get(for: type))
+        return wallet
     }
 
     private func showConfirm(for account: Wallet, completedBackup: Bool) {
