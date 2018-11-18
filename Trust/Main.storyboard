@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="definer-tagline" translatesAutoresizingMaskIntoConstraints="NO" id="esM-T7-aeI">
-                                <rect key="frame" x="64" y="50" width="286" height="139"/>
+                                <rect key="frame" x="64.000000000000057" y="50" width="823.33333333333348" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="esM-T7-aeI" secondAttribute="height" multiplier="247:120" id="RE7-fF-igA"/>
                                     <constraint firstAttribute="width" constant="240" id="lre-ou-2aS"/>
@@ -27,24 +27,30 @@
                                 <viewLayoutGuide key="safeArea" id="8uG-VP-Xw7"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-2o-cpN">
-                                <rect key="frame" x="64" y="353" width="286" height="143"/>
+                                <rect key="frame" x="64.000000000000057" y="319" width="823.33333333333348" height="177"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register to start" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-H8-IWD">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="823.33333333333337" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.39215686274509803" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-z4-Sio">
+                                        <rect key="frame" x="0.0" y="47.666666666666686" width="823.33333333333337" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.3921568627" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Enter your email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="usf-9M-CKu">
-                                        <rect key="frame" x="0.0" y="38.333333333333314" width="286" height="21"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666686" width="823.33333333333337" height="21"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayline" translatesAutoresizingMaskIntoConstraints="NO" id="KMy-dm-IHZ">
-                                        <rect key="frame" x="0.0" y="85" width="286" height="5"/>
+                                        <rect key="frame" x="0.0" y="120" width="823.33333333333337" height="5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuJ-ih-vvE" customClass="RegisterButton" customModule="Trust" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="109" width="286" height="34"/>
+                                        <rect key="frame" x="0.0" y="143" width="823.33333333333337" height="34"/>
                                         <state key="normal" title="REGISTER">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -61,10 +67,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3nc-73-g2j">
-                                <rect key="frame" x="64" y="714" width="286" height="12"/>
+                                <rect key="frame" x="64.000000000000057" y="714" width="823.33333333333348" height="12"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 DeFiner Pte. Ltd." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOI-jn-eKc">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="12"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="823.33333333333337" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -86,6 +92,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q54-TR-snf"/>
                     </view>
+                    <connections>
+                        <outlet property="GreetingInfoLabel" destination="UQP-H8-IWD" id="bkn-0N-u9l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEN-Yk-mtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
