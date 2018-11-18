@@ -469,6 +469,9 @@
 		CCA4FE3A1FD42B4100749AE4 /* FakeJailbreakChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4FE391FD42B4100749AE4 /* FakeJailbreakChecker.swift */; };
 		CCCD74FD1FD2D38D004A087D /* CheckDeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD74FC1FD2D38D004A087D /* CheckDeviceCoordinator.swift */; };
 		D9F052FDC5B72E024DD05F0D /* Pods_TrustTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48A17FC2CC895AF2BB871D0 /* Pods_TrustTests.framework */; };
+		FD15E5D0219A806F0053BA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD15E5CF219A806E0053BA9C /* Main.storyboard */; };
+		FD15E5D2219A92EE0053BA9C /* SignOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */; };
+		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -972,6 +975,9 @@
 		CCA4FE391FD42B4100749AE4 /* FakeJailbreakChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeJailbreakChecker.swift; sourceTree = "<group>"; };
 		CCCD74FC1FD2D38D004A087D /* CheckDeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDeviceCoordinator.swift; sourceTree = "<group>"; };
 		DDF643F2D99BCE8E6139C057 /* Pods-TrustTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrustTests/Pods-TrustTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD15E5CF219A806E0053BA9C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOnViewController.swift; sourceTree = "<group>"; };
+		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1071,6 +1077,9 @@
 				2912CD061F6A830700C6CBE3 /* Info.plist */,
 				29AD8A071F93E1F0008E10E7 /* Trust.entitlements */,
 				296106CD1F777E410006164B /* LaunchScreen.storyboard */,
+				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
+				FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */,
+				FD50D71821A1C95500D09CC6 /* RegisterButton.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -2668,6 +2677,7 @@
 				775DF43F203E38D3009CD082 /* NonFungibleTokenViewCell.xib in Resources */,
 				73DE7B3320987D8F00AE04E6 /* NonFungibleCollectionViewCell.xib in Resources */,
 				7704836C20FE99B600837735 /* CoinViewCell.xib in Resources */,
+				FD15E5D0219A806F0053BA9C /* Main.storyboard in Resources */,
 				296106CE1F777E410006164B /* LaunchScreen.storyboard in Resources */,
 				290B2B541F8F50030053C83E /* Localizable.strings in Resources */,
 				2912CD021F6A830700C6CBE3 /* Assets.xcassets in Resources */,
@@ -2928,6 +2938,7 @@
 				296FC59920B6874800B923EF /* ExportPhraseCoordinator.swift in Sources */,
 				615F10561FCBEF2E008A45AF /* OnboardingPageViewModel.swift in Sources */,
 				73200B752048B67E00118A82 /* CollectibleTokenObject.swift in Sources */,
+				FD15E5D2219A92EE0053BA9C /* SignOnViewController.swift in Sources */,
 				77872D27202505C00032D687 /* EnterPasswordViewModel.swift in Sources */,
 				29F1C85F200369BA003780D8 /* HelpUsViewModel.swift in Sources */,
 				293112371FC9A24600966EEA /* UIGestureRecognizer+Closure.swift in Sources */,
@@ -3004,6 +3015,7 @@
 				775DF443203E5685009CD082 /* Tabs.swift in Sources */,
 				771AA960200D5E8800D25403 /* PassphraseView.swift in Sources */,
 				7721A6BE202A5677004DB16C /* DecryptError.swift in Sources */,
+				FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */,
 				61FC5ECF1FCFBAE500CCB12A /* EtherNumberFormatter.swift in Sources */,
 				736D6ED120DBE925008C2CC4 /* AnaliticsViewModel.swift in Sources */,
 				772C6DB12107FF3800FCE4F1 /* AddressFieldView.swift in Sources */,

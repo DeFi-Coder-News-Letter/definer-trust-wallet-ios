@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c1A-PS-I58">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SignOn-->
+        <scene sceneID="vor-02-HX3">
+            <objects>
+                <viewController storyboardIdentifier="SignOn" title="SignOn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1A-PS-I58" customClass="SignOnViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="120-pf-YAN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="definer-tagline" translatesAutoresizingMaskIntoConstraints="NO" id="esM-T7-aeI">
+                                <rect key="frame" x="63.999999999999943" y="74" width="823.66666666666652" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="esM-T7-aeI" secondAttribute="height" multiplier="247:120" id="RE7-fF-igA"/>
+                                    <constraint firstAttribute="width" constant="240" id="lre-ou-2aS"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="8uG-VP-Xw7"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-2o-cpN">
+                                <rect key="frame" x="63.999999999999943" y="395" width="823.66666666666652" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register to start" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-H8-IWD">
+                                        <rect key="frame" x="0.0" y="0.0" width="823.66666666666663" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.39215686274509803" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Enter your email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="usf-9M-CKu">
+                                        <rect key="frame" x="0.0" y="38.333333333333314" width="823.66666666666663" height="21"/>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayline" translatesAutoresizingMaskIntoConstraints="NO" id="KMy-dm-IHZ">
+                                        <rect key="frame" x="0.0" y="85" width="823.66666666666663" height="5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuJ-ih-vvE" customClass="RegisterButton" customModule="Trust" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="109" width="823.66666666666663" height="34"/>
+                                        <state key="normal" title="REGISTER">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="OnRegister:" destination="c1A-PS-I58" eventType="touchUpInside" id="tku-69-GVZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KMy-dm-IHZ" firstAttribute="top" secondItem="usf-9M-CKu" secondAttribute="bottom" id="ZTe-Tt-yl8"/>
+                                    <constraint firstItem="KMy-dm-IHZ" firstAttribute="leading" secondItem="usf-9M-CKu" secondAttribute="leading" id="f1E-g0-oe4"/>
+                                    <constraint firstItem="usf-9M-CKu" firstAttribute="trailing" secondItem="KMy-dm-IHZ" secondAttribute="trailing" id="gKB-u0-dvC"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3nc-73-g2j">
+                                <rect key="frame" x="63.999999999999943" y="756" width="823.66666666666652" height="12"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 DeFiner Pte. Ltd." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOI-jn-eKc">
+                                        <rect key="frame" x="0.0" y="0.0" width="823.66666666666663" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1dr-2o-cpN" firstAttribute="leading" secondItem="q54-TR-snf" secondAttribute="leading" constant="64" id="5FG-ei-8HH"/>
+                            <constraint firstItem="q54-TR-snf" firstAttribute="bottom" secondItem="1dr-2o-cpN" secondAttribute="bottom" constant="240" id="HOb-rb-9QJ"/>
+                            <constraint firstItem="esM-T7-aeI" firstAttribute="top" secondItem="q54-TR-snf" secondAttribute="top" constant="30" id="O75-1p-WpY"/>
+                            <constraint firstItem="q54-TR-snf" firstAttribute="trailing" secondItem="1dr-2o-cpN" secondAttribute="trailing" constant="64" id="aOg-Zq-7Bc"/>
+                            <constraint firstItem="q54-TR-snf" firstAttribute="trailing" secondItem="esM-T7-aeI" secondAttribute="trailing" constant="64" id="dtV-9s-qvP"/>
+                            <constraint firstItem="esM-T7-aeI" firstAttribute="leading" secondItem="q54-TR-snf" secondAttribute="leading" constant="64" id="lgk-ra-f1f"/>
+                            <constraint firstItem="q54-TR-snf" firstAttribute="bottom" secondItem="3nc-73-g2j" secondAttribute="bottom" constant="10" id="oyh-Rc-p0z"/>
+                            <constraint firstItem="q54-TR-snf" firstAttribute="trailing" secondItem="3nc-73-g2j" secondAttribute="trailing" constant="64" id="xOa-ag-jx4"/>
+                            <constraint firstItem="3nc-73-g2j" firstAttribute="leading" secondItem="q54-TR-snf" secondAttribute="leading" constant="64" id="xzo-HS-3re"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q54-TR-snf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pEN-Yk-mtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3474.4000000000001" y="-733.00492610837443"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="definer-tagline" width="700" height="400"/>
+        <image name="grayline" width="586" height="5"/>
+    </resources>
+    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

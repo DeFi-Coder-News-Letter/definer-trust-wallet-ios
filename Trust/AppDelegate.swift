@@ -4,6 +4,12 @@ import UIKit
 import Branch
 import RealmSwift
 
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     var window: UIWindow?
@@ -14,7 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }()
     let urlNavigatorCoordinator = URLNavigatorCoordinator()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pickColorVC = storyboard.instantiateViewController(withIdentifier: "SignOn") as UIViewController
+        let navigationController = UINavigationController(rootViewController: pickColorVC)
+
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        if let window = window {
+//            window.rootViewController = navigationController
+//            window.makeKeyAndVisible()
+//        }
+        
+        // UIApplication.shared.statusBarView?.backgroundColor = UIColor.green
+        
+        return true
 
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
