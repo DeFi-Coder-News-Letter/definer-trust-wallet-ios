@@ -12,6 +12,12 @@ class SignOnViewController: UIViewController {
         let walletStorage = WalletStorage(realm: realm)
         let keystore = EtherKeystore(storage: walletStorage)
         
+        
+        self.performSegue(withIdentifier: "SignUpError", sender: self)
+        return
+        
+
+        
         delegate.coordinator = AppCoordinator(window: delegate.window!, keystore: keystore, navigator: delegate.urlNavigatorCoordinator)
         delegate.coordinator.start()
     }

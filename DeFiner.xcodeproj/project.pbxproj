@@ -472,6 +472,8 @@
 		FD15E5D0219A806F0053BA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD15E5CF219A806E0053BA9C /* Main.storyboard */; };
 		FD15E5D2219A92EE0053BA9C /* SignOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */; };
 		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
+		FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */; };
+		FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -978,6 +980,8 @@
 		FD15E5CF219A806E0053BA9C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOnViewController.swift; sourceTree = "<group>"; };
 		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
+		FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,6 +1084,8 @@
 				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
 				FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */,
 				FD50D71821A1C95500D09CC6 /* RegisterButton.swift */,
+				FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */,
+				FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -2909,6 +2915,7 @@
 				299B5E2D1FCBC0660051361C /* BalanceProtocol.swift in Sources */,
 				296421971F70C1F200EB363B /* ErrorView.swift in Sources */,
 				903682F1204A6DB800013479 /* BookmarkViewController.swift in Sources */,
+				FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */,
 				734AFD1520F1558800864E8E /* NotificationBadge.swift in Sources */,
 				29358DA91F79FD1C00925D61 /* CALayer.swift in Sources */,
 				29C80D491FB51C380037B1E0 /* Dictionary.swift in Sources */,
@@ -2980,6 +2987,7 @@
 				73BD193F206097E600668673 /* TrustNetwork.swift in Sources */,
 				7391DC8C203715DF002C5ADE /* Pair.swift in Sources */,
 				293248861F88CCE6008A9818 /* SplashError.swift in Sources */,
+				FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */,
 				296421951F70C1EC00EB363B /* LoadingView.swift in Sources */,
 				736D6ECF20DBD946008C2CC4 /* PrivacyViewController.swift in Sources */,
 				2961BD071FB146EB00C4B840 /* ChainState.swift in Sources */,
