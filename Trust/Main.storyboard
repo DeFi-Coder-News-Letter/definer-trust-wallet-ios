@@ -13,7 +13,7 @@
         <!--SignOn-->
         <scene sceneID="vor-02-HX3">
             <objects>
-                <viewController storyboardIdentifier="SignOn" title="SignOn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1A-PS-I58" customClass="SignOnViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignOn" title="SignOn" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1A-PS-I58" customClass="SignOnViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="120-pf-YAN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                         </state>
                                         <connections>
                                             <action selector="OnRegister:" destination="c1A-PS-I58" eventType="touchUpInside" id="tku-69-GVZ"/>
-                                            <segue destination="EMh-Ed-Pr7" kind="modal" identifier="SignUpError" animates="NO" modalPresentationStyle="formSheet" id="S3w-ln-I3j"/>
+                                            <segue destination="EMh-Ed-Pr7" kind="modal" identifier="SignUpError" animates="NO" modalTransitionStyle="coverVertical" id="S3w-ln-I3j"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -104,7 +104,7 @@
         <scene sceneID="3IA-jC-Htp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlW-1b-j44" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="SignUpPopUpView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EMh-Ed-Pr7" customClass="RegisterPopupViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPopUpView" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EMh-Ed-Pr7" customClass="RegisterPopupViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RXy-Qe-mE1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -2,6 +2,7 @@
 
 import UIKit
 import RealmSwift
+import TrustCore
 
 class SignOnViewController: UIViewController {
     @IBOutlet weak var GreetingInfoLabel: UILabel!
@@ -32,7 +33,7 @@ class SignOnViewController: UIViewController {
         let keystore = EtherKeystore(storage: walletStorage)
         if keystore.hasWallets {
             let wallet = keystore.recentlyUsedWallet ?? keystore.wallets.first!
-            self.GreetingInfoLabel.text = String(wallet.description)
+            self.GreetingInfoLabel.text = EthereumAddress(data: wallet.currentAccount.address.data, coin: Coin.ethereum)?.eip55String
         } else {
             self.GreetingInfoLabel.text = "Register with email to start"
         }
