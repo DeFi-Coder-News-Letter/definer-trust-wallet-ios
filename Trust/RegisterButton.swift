@@ -20,7 +20,7 @@ class RegisterButton: UIButton {
 //        self.tintColor = UIColor.white
         apply(size: ButtonSize.large, style: ButtonStyle.solid)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.setTitle(NSLocalizedString("REGISTER", comment: ""), for: .normal)
+        self.setTitle(NSLocalizedString("SIGN UP", comment: ""), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)
         self.backgroundColor = Colors.darkBlue
     }
