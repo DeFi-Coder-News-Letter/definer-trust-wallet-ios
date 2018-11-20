@@ -7,9 +7,13 @@ import Alamofire
 
 class SignOnViewController: UIViewController {
     @IBOutlet weak var RegisterButton: RegisterButton!
+    @IBOutlet weak var grayLine: UIImageView!
+    @IBOutlet weak var emailAddressInput: UITextField!
+    @IBOutlet weak var accountStatusLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var GreetingInfoLabel: UILabel!
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    var statusCheckTimer: Timer!
     @IBAction func OnRegister(_ sender: Any) {
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
@@ -17,11 +21,11 @@ class SignOnViewController: UIViewController {
         let walletStorage = WalletStorage(realm: realm)
         let keystore = EtherKeystore(storage: walletStorage)
         if keystore.hasWallets {
-            self.performSegue(withIdentifier: "SignUpError", sender: self)
-            return
-        } else {
             delegate.coordinator = AppCoordinator(window: delegate.window!, keystore: keystore, navigator: delegate.urlNavigatorCoordinator)
             delegate.coordinator.start()
+        } else {
+            self.performSegue(withIdentifier: "SignUpError", sender: self)
+            return
         }
     }
     
@@ -30,8 +34,10 @@ class SignOnViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 //        UIApplication.shared.statusBarView?.backgroundColor = UIColor.green
+        self.accountStatusLabel.isHidden = true
+        self.emailAddressInput.isHidden = true
+        self.grayLine.isHidden = true
         self.RegisterButton.isHidden = true
-        self.loadingIndicator.startAnimating()
         
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
@@ -43,22 +49,28 @@ class SignOnViewController: UIViewController {
             
             let accountAddress = EthereumAddress(data: wallet.currentAccount.address.data, coin: Coin.ethereum)?.eip55String
             
-            self.GreetingInfoLabel.text = accountAddress
+            self.GreetingInfoLabel.text = "Loading account infomation..."
             
-            makeGetCallWithAlamofire()
+            self.statusCheckTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+                self.makeGetCallWithAlamofire(account : accountAddress!)
+            }
         } else {
             self.GreetingInfoLabel.text = "Register with email to start"
         }
     }
 
-    func makeGetCallWithAlamofire() {
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+    func makeGetCallWithAlamofire(account : String) {
+        self.loadingIndicator.startAnimating()
+        self.loadingIndicator.isHidden = false
+        //self.accountStatusLabel.isHidden = true
+        
+        let todoEndpoint: String = "https://app.definer.org/definer/api/v1.0/accounts/" + account.localizedLowercase
         Alamofire.request(todoEndpoint)
             .responseJSON { response in
                 // check for errors
                 guard response.result.error == nil else {
                     // got an error in getting the data, need to handle it
-                    print("error calling GET on /todos/1")
+                    print("error calling GET on account")
                     print(response.result.error!)
                     return
                 }
@@ -71,17 +83,37 @@ class SignOnViewController: UIViewController {
                     return
                 }
                 // get and print the title
-                guard let todoTitle = json["title"] as? String else {
-                    print("Could not get todo title from JSON")
+                let accountStatus : String = json["status"] as! String
+                let accountData = json["data"] as? [String: Any]
+                guard let accountEmail = accountData!["email"] as? String else {
+                    print("Could not get email from JSON")
                     return
                 }
-                print("The title is: " + todoTitle)
+                print("The email is: " + accountEmail)
                 self.loadingIndicator.stopAnimating()
                 self.loadingIndicator.isHidden = true
-                self.RegisterButton.setTitle("CONTINUE", for: UIControlState.normal)
-                self.RegisterButton.isHidden = false
-
-        }
+                self.GreetingInfoLabel.text = "Welcome back " + accountEmail
+                
+                switch accountStatus.uppercased() {
+                case "CONFIRMED":
+                    self.accountStatusLabel.isHidden = true
+                    self.RegisterButton.isEnabled = true
+                    self.RegisterButton.setTitle("CONTINUE", for: UIControlState.normal)
+                    self.RegisterButton.isHidden = false
+                    self.statusCheckTimer.invalidate()
+                case "VALIDATION_EMAIL_SENT":
+                    self.accountStatusLabel.text = "Thank you for choosing DeFiner. An validation email was sent to you. Please validate in your email inbox."
+                    self.accountStatusLabel.isHidden = false
+                    self.RegisterButton.isEnabled = false
+                    self.RegisterButton.setTitle("CONTINUE", for: UIControlState.normal)
+                    self.RegisterButton.isHidden = true
+                default:
+                    self.RegisterButton.isEnabled = false
+                    self.RegisterButton.setTitle("CONTINUE", for: UIControlState.disabled)
+                    self.RegisterButton.isHidden = true
+                }
+                
+            }
     }
 
     /*
