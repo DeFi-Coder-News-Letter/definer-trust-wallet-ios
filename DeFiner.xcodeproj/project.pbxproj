@@ -474,6 +474,8 @@
 		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
 		FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */; };
 		FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */; };
+		FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */; };
+		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -982,6 +984,8 @@
 		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
 		FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1082,8 +1086,10 @@
 				29AD8A071F93E1F0008E10E7 /* Trust.entitlements */,
 				296106CD1F777E410006164B /* LaunchScreen.storyboard */,
 				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
+				FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */,
 				FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */,
 				FD50D71821A1C95500D09CC6 /* RegisterButton.swift */,
+				FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */,
 				FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */,
 				FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */,
 			);
@@ -3041,6 +3047,7 @@
 				2928500E2096A69E00EC5AFB /* AboutViewModel.swift in Sources */,
 				298542F91FBE9A0100CB5081 /* CryptoAddressValidator.swift in Sources */,
 				7778713C2086AD9900CF7303 /* BigInt.swift in Sources */,
+				FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */,
 				7721A6CC202EFBC5004DB16C /* AddCustomNetworkViewController.swift in Sources */,
 				296FC5A620C2773B00B923EF /* UIScrollView.swift in Sources */,
 				77872D322027AA4A0032D687 /* SliderTextFieldRow.swift in Sources */,
@@ -3140,6 +3147,7 @@
 				296FC59B20B68FF600B923EF /* ExportPhraseViewModel.swift in Sources */,
 				775C00B520195BFB001B5EBC /* BrowserAction.swift in Sources */,
 				77E0E773201FAD06009B4B31 /* BrowserURLParser.swift in Sources */,
+				FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */,
 				73ACEF0520163F46003DD71D /* LockEnterPasscodeCoordinator.swift in Sources */,
 				A2B7ECAA2038122200828E7D /* ExportPrivateKeyCoordinator.swift in Sources */,
 				29E6E06E1FE897EE0079265A /* BrowserViewController.swift in Sources */,

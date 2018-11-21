@@ -7,8 +7,6 @@ import Alamofire
 
 class SignOnViewController: UIViewController {
     @IBOutlet weak var RegisterButton: RegisterButton!
-    @IBOutlet weak var grayLine: UIImageView!
-    @IBOutlet weak var emailAddressInput: UITextField!
     @IBOutlet weak var accountStatusLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var GreetingInfoLabel: UILabel!
@@ -21,24 +19,23 @@ class SignOnViewController: UIViewController {
         let walletStorage = WalletStorage(realm: realm)
         let keystore = EtherKeystore(storage: walletStorage)
         if keystore.hasWallets {
+            self.performSegue(withIdentifier: "SignUp", sender: self)
+            return
+        } else {
             delegate.coordinator = AppCoordinator(window: delegate.window!, keystore: keystore, navigator: delegate.urlNavigatorCoordinator)
             delegate.coordinator.start()
-        } else {
-            self.performSegue(withIdentifier: "SignUpError", sender: self)
-            return
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 //        UIApplication.shared.statusBarView?.backgroundColor = UIColor.green
+        self.GreetingInfoLabel.text = "Welcome to DeFiner"
         self.accountStatusLabel.isHidden = true
-        self.emailAddressInput.isHidden = true
-        self.grayLine.isHidden = true
-        self.RegisterButton.isHidden = true
-        
+        self.RegisterButton.setTitle("SIGN UP", for: UIControlState.normal)
+        self.RegisterButton.isHidden = false
+        self.loadingIndicator.isHidden = true
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
         let realm = try! Realm(configuration: sharedMigration.config)
@@ -46,16 +43,13 @@ class SignOnViewController: UIViewController {
         let keystore = EtherKeystore(storage: walletStorage)
         if keystore.hasWallets {
             let wallet = keystore.recentlyUsedWallet ?? keystore.wallets.first!
-            
             let accountAddress = EthereumAddress(data: wallet.currentAccount.address.data, coin: Coin.ethereum)?.eip55String
-            
             self.GreetingInfoLabel.text = "Loading account infomation..."
-            
             self.statusCheckTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
                 self.makeGetCallWithAlamofire(account : accountAddress!)
             }
         } else {
-            self.GreetingInfoLabel.text = "Register with email to start"
+            self.GreetingInfoLabel.text = "Welcome to DeFiner"
         }
     }
 
@@ -63,7 +57,6 @@ class SignOnViewController: UIViewController {
         self.loadingIndicator.startAnimating()
         self.loadingIndicator.isHidden = false
         //self.accountStatusLabel.isHidden = true
-        
         let todoEndpoint: String = "https://app.definer.org/definer/api/v1.0/accounts/" + account.localizedLowercase
         Alamofire.request(todoEndpoint)
             .responseJSON { response in
@@ -80,6 +73,8 @@ class SignOnViewController: UIViewController {
                     if let error = response.result.error {
                         print("Error: \(error)")
                     }
+                    self.statusCheckTimer.invalidate()
+                    self.performSegue(withIdentifier: "SignUp", sender: self)
                     return
                 }
                 // get and print the title
@@ -93,7 +88,6 @@ class SignOnViewController: UIViewController {
                 self.loadingIndicator.stopAnimating()
                 self.loadingIndicator.isHidden = true
                 self.GreetingInfoLabel.text = "Welcome back " + accountEmail
-                
                 switch accountStatus.uppercased() {
                 case "CONFIRMED":
                     self.accountStatusLabel.isHidden = true
@@ -112,7 +106,6 @@ class SignOnViewController: UIViewController {
                     self.RegisterButton.setTitle("CONTINUE", for: UIControlState.disabled)
                     self.RegisterButton.isHidden = true
                 }
-                
             }
     }
 
