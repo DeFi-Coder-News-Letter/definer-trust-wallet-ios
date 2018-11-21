@@ -7,6 +7,8 @@ import Alamofire
 
 class SignUpViewController: UIViewController {
 
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+
     @IBOutlet weak var SignUpButton: SignUpButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +69,7 @@ class SignUpViewController: UIViewController {
                     }
                     return
                 }
-                // get and print the title
-                guard let idNumber = json["id"] as? Int else {
-                    print("Could not get id number from JSON")
-                    return
-                }
-                print("Created todo with id: \(idNumber)")
+                self.performSegue(withIdentifier: "ToWelcome", sender: self)
         }
     }
 }

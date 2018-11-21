@@ -48,7 +48,6 @@
                                         </state>
                                         <connections>
                                             <action selector="OnRegister:" destination="c1A-PS-I58" eventType="touchUpInside" id="tku-69-GVZ"/>
-                                            <segue destination="EMh-Ed-Pr7" kind="modal" identifier="SignUpError" animates="NO" modalTransitionStyle="coverVertical" id="S3w-ln-I3j"/>
                                         </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26P-2N-D36">
@@ -89,6 +88,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q54-TR-snf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yJq-Oh-0oe"/>
                     <connections>
                         <outlet property="GreetingInfoLabel" destination="UQP-H8-IWD" id="bkn-0N-u9l"/>
                         <outlet property="RegisterButton" destination="KuJ-ih-vvE" id="gmJ-7n-tIg"/>
@@ -244,11 +244,12 @@
                         <outlet property="SignUpButton" destination="iMR-yg-tUj" id="HQt-b4-AGn"/>
                         <outlet property="emailAddress" destination="fhw-Ga-XEy" id="iOZ-pk-lOc"/>
                         <outlet property="loadingIndicator" destination="pj5-VG-ik0" id="Iiw-FR-yvK"/>
+                        <segue destination="c1A-PS-I58" kind="modal" identifier="ToWelcome" id="RbR-Vy-jfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcj-0K-q0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2537" y="105"/>
+            <point key="canvasLocation" x="-4402" y="163"/>
         </scene>
     </scenes>
     <resources>

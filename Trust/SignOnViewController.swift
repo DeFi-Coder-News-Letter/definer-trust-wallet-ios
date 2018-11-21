@@ -18,13 +18,9 @@ class SignOnViewController: UIViewController {
         let realm = try! Realm(configuration: sharedMigration.config)
         let walletStorage = WalletStorage(realm: realm)
         let keystore = EtherKeystore(storage: walletStorage)
-        if keystore.hasWallets {
-            self.performSegue(withIdentifier: "SignUp", sender: self)
-            return
-        } else {
-            delegate.coordinator = AppCoordinator(window: delegate.window!, keystore: keystore, navigator: delegate.urlNavigatorCoordinator)
-            delegate.coordinator.start()
-        }
+
+        delegate.coordinator = AppCoordinator(window: delegate.window!, keystore: keystore, navigator: delegate.urlNavigatorCoordinator)
+        delegate.coordinator.start()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +30,9 @@ class SignOnViewController: UIViewController {
         self.GreetingInfoLabel.text = "Welcome to DeFiner"
         self.accountStatusLabel.isHidden = true
         self.RegisterButton.setTitle("SIGN UP", for: UIControlState.normal)
-        self.RegisterButton.isHidden = false
-        self.loadingIndicator.isHidden = true
+        self.RegisterButton.isHidden = true
+        self.loadingIndicator.isHidden = false
+        self.loadingIndicator.startAnimating()
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
         let realm = try! Realm(configuration: sharedMigration.config)
@@ -50,6 +47,10 @@ class SignOnViewController: UIViewController {
             }
         } else {
             self.GreetingInfoLabel.text = "Welcome to DeFiner"
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+            self.RegisterButton.setTitle("SIGN UP", for: UIControlState.normal)
+            self.RegisterButton.isHidden = false
         }
     }
 

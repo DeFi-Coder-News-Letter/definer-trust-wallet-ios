@@ -80,8 +80,12 @@ final class WalletCoordinator: Coordinator {
                     self.navigationController.topViewController?.hideLoading(animated: false)
                     switch mnemonicResult {
                     case .success(let words):
-                        self.walletCreated(wallet: self.getWalletInfo(for: result.value!), type: WalletDoneType.created)
+                        //self.walletCreated(wallet: self.getWalletInfo(for: result.value!), type: WalletDoneType.created)
                         //self.pushBackup(for: account, words: words)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller =
+                            storyboard.instantiateViewController(withIdentifier: "SignUp")
+                        self.navigationController.pushViewController(controller, animated: true)
                     case .failure(let error):
                         self.navigationController.displayError(error: error)
                     }
