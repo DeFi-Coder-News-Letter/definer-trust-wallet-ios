@@ -5,18 +5,31 @@ import RealmSwift
 import TrustCore
 import Alamofire
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     let delegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var SignUpButton: SignUpButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailAddress.delegate = self
 
         // Do any additional setup after loading the view.
         self.loadingIndicator.isHidden = true
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //textField.resignFirstResponder()
+        //or
+        self.view.endEditing(true)
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -39,16 +52,16 @@ class SignUpViewController: UIViewController {
         if keystore.hasWallets {
             let wallet = keystore.recentlyUsedWallet ?? keystore.wallets.first!
             let accountAddress = EthereumAddress(data: wallet.currentAccount.address.data, coin: Coin.ethereum)?.eip55String
-            self.makePostCallWithAlamofire(account : accountAddress!)
+            self.makePostCallWithAlamofire(account: accountAddress!)
         }
     }
-    func makePostCallWithAlamofire(account : String) {
+    func makePostCallWithAlamofire(account: String) {
         let parameters: [String: Any] = [
-            "data" : [
-                "email" : self.emailAddress.text as! String,
-                "telegram" : "not used"
+            "data": [
+                "email": self.emailAddress.text as! String,
+                "telegram": "not used"
             ],
-            "status" : "REQUESTED"
+            "status": "REQUESTED"
         ]
 
         Alamofire.request("https://app.definer.org/definer/api/v1.0/accounts/" + account.localizedLowercase, method: .post, parameters: parameters, encoding: JSONEncoding.default)
@@ -62,7 +75,7 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 // make sure we got some JSON since that's what we expect
-                guard let json = response.result.value as? [String: Any] else {
+                guard (response.result.value as? [String: Any]) != nil else {
                     print("didn't get todo object as JSON from API")
                     if let error = response.result.error {
                         print("Error: \(error)")
