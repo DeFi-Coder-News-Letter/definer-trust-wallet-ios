@@ -183,7 +183,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Enter your email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-Ga-XEy">
                                         <rect key="frame" x="0.0" y="74.666666666666686" width="700.33333333333337" height="21"/>
                                         <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayline" translatesAutoresizingMaskIntoConstraints="NO" id="yIu-S8-jNl">
                                         <rect key="frame" x="0.0" y="120" width="700.33333333333337" height="5"/>
@@ -242,7 +242,7 @@
                     </view>
                     <connections>
                         <outlet property="SignUpButton" destination="iMR-yg-tUj" id="HQt-b4-AGn"/>
-                        <outlet property="emailAddress" destination="fhw-Ga-XEy" id="iOZ-pk-lOc"/>
+                        <outlet property="emailAddress" destination="fhw-Ga-XEy" id="FhS-p8-Aog"/>
                         <outlet property="loadingIndicator" destination="pj5-VG-ik0" id="Iiw-FR-yvK"/>
                         <segue destination="c1A-PS-I58" kind="modal" identifier="ToWelcome" id="RbR-Vy-jfp"/>
                     </connections>

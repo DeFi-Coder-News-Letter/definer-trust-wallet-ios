@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController {
     func makePostCallWithAlamofire(account : String) {
         let parameters: [String: Any] = [
             "data" : [
-                "email" : "burywong.definer@gmail.com",
+                "email" : self.emailAddress.text as! String,
                 "telegram" : "not used"
             ],
             "status" : "REQUESTED"
