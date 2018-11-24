@@ -312,7 +312,8 @@ final class SettingsViewController: FormViewController, Coordinator {
     }
 
     func openURLInBrowser(_ url: URL) {
-        self.delegate?.didAction(action: .openURL(url), in: self)
+        //self.delegate?.didAction(action: .openURL(url), in: self)
+        UIApplication.shared.openURL(url)
     }
 
     required init?(coder aDecoder: NSCoder) {
