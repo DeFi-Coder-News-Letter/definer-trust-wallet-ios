@@ -13,6 +13,11 @@ class SignOnViewController: UIViewController {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var statusCheckTimer: Timer!
     @IBAction func OnRegister(_ sender: Any) {
+        if self.RegisterButton.title(for: UIControlState.normal) as String! == "CHANGE EMAIL" {
+            self.performSegue(withIdentifier: "SignUp", sender: self)
+            return
+        }
+        
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
         let realm = try! Realm(configuration: sharedMigration.config)
@@ -99,9 +104,9 @@ class SignOnViewController: UIViewController {
                 case "VALIDATION_EMAIL_SENT":
                     self.accountStatusLabel.text = "Thank you for choosing DeFiner. An validation email was sent to you. Please validate in your email inbox."
                     self.accountStatusLabel.isHidden = false
-                    self.RegisterButton.isEnabled = false
-                    self.RegisterButton.setTitle("CONTINUE", for: UIControlState.normal)
-                    self.RegisterButton.isHidden = true
+                    self.RegisterButton.isEnabled = true
+                    self.RegisterButton.setTitle("CHANGE EMAIL", for: UIControlState.normal)
+                    self.RegisterButton.isHidden = false
                 default:
                     self.RegisterButton.isEnabled = false
                     self.RegisterButton.setTitle("CONTINUE", for: UIControlState.disabled)
