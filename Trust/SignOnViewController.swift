@@ -17,7 +17,6 @@ class SignOnViewController: UIViewController {
             self.performSegue(withIdentifier: "SignUp", sender: self)
             return
         }
-        
         let sharedMigration = SharedMigrationInitializer()
         sharedMigration.perform()
         let realm = try! Realm(configuration: sharedMigration.config)
