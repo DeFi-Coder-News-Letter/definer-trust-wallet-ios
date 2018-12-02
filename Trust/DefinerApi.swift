@@ -2,6 +2,7 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 
 struct ContractData {
     
@@ -164,29 +165,29 @@ class DefinerApi {
         }
     }
     
-    func getContracts () -> Void {
-        let apiEndpoint: String = "https://app.definer.org/definer/api/v1.0/contracts"
-        var contractObject: ContractClass? = nil
-        Alamofire.request(apiEndpoint)
-            .responseJSON { response in
-                // check for errors
-                guard response.result.error == nil else {
-                    // got an error in getting the data, need to handle it
-                    print("error calling GET on account")
-                    print(response.result.error!)
-                    failure(error: response.result.error)
-                }
-                // make sure we got some JSON since that's what we expect
-                guard let jsonText = response.result.value as? [String: Any] else {
-                    print("didn't get todo object as JSON from API")
-                    if let error = response.result.error {
-                        print("Error: \(error)")
+    func getContracts() -> Promise<ContractClass> {
+        return Promise { seal in
+            Alamofire.request("https://app.definer.org/definer/api/v1.0/contracts")
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let json):
+                        guard let json = json  as? [String: Any] else {
+                            return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        // make sure we got some JSON since that's what we expect
+                        guard let jsonText = response.result.value as? [String: Any] else {
+                            print("didn't get todo object as JSON from API")
+                            if let error = response.result.error {
+                                print("Error: \(error)")
+                            }
+                            return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        seal.fulfill(ContractClass(jsonText))
+                    case .failure(let error):
+                        seal.reject(error)
                     }
-                    failure(error: response.result.error)
-                }
-                print("DefinerApi: contract response body \(jsonText)")
-                contractObject = ContractClass(jsonText)
-                success(response: contractObject)
+            }
         }
     }
 }
