@@ -5,11 +5,9 @@ import UIKit
 class ContractTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var contractTableView: UITableView!
-    var contracts = [String]()
+    var contracts = [ResourceData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.contracts += ["contract1", "contract2", "contract3"]
-        
         self.contractTableView.dataSource = self
         self.contractTableView.delegate = self
 
@@ -19,6 +17,15 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         DefinerApi().getContracts()
+            .done { contractClass -> Void in
+                //Do something with the JSON info
+                self.contracts = contractClass.data!
+                self.contractTableView.reloadData()
+            }
+            .catch { error in
+                //Handle error or give feedback to the user
+                print(error.localizedDescription)
+        }
     }
 
     // MARK: - Table view data source
@@ -35,7 +42,7 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractTableViewCell", for: indexPath) as! ContractTableViewCell
 
         // Configure the cell...
-        cell.contractName.text = self.contracts[indexPath.row]
+        cell.contractName.text = self.contracts[indexPath.row].data?.name
 
         return cell
     }
