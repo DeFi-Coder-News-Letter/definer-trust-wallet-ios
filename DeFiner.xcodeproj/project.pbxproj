@@ -474,6 +474,9 @@
 		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
 		FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */; };
 		FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */; };
+		FD62974021AE50E400E42A63 /* DefinerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62973F21AE50E400E42A63 /* DefinerApi.swift */; };
+		FD62974221AE59EF00E42A63 /* ContractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */; };
+		FD62974421AE5AB500E42A63 /* ContractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */; };
 		FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */; };
 		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
 /* End PBXBuildFile section */
@@ -984,6 +987,9 @@
 		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
 		FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		FD62973F21AE50E400E42A63 /* DefinerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinerApi.swift; sourceTree = "<group>"; };
+		FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTableViewCell.swift; sourceTree = "<group>"; };
+		FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTableViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1086,12 +1092,15 @@
 				29AD8A071F93E1F0008E10E7 /* Trust.entitlements */,
 				296106CD1F777E410006164B /* LaunchScreen.storyboard */,
 				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
+				FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */,
+				FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */,
 				FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */,
 				FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */,
 				FD50D71821A1C95500D09CC6 /* RegisterButton.swift */,
 				FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */,
 				FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */,
 				FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */,
+				FD62973F21AE50E400E42A63 /* DefinerApi.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -2898,6 +2907,7 @@
 				29AD3D4720EC443D007893C9 /* WalletCreatedController.swift in Sources */,
 				A2E43B4E20802879001FAD3D /* UINavigationController.swift in Sources */,
 				2963B6B11F9891F5003063C1 /* UIButton.swift in Sources */,
+				FD62974221AE59EF00E42A63 /* ContractTableViewCell.swift in Sources */,
 				29F114F21FA7966300114A29 /* PrivateKeyRule.swift in Sources */,
 				BB3E2A0E20A04F4B000F8B76 /* ENSRecord.swift in Sources */,
 				772C6DB52109161E00FCE4F1 /* TokenObjectViewModel.swift in Sources */,
@@ -3150,6 +3160,7 @@
 				FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */,
 				73ACEF0520163F46003DD71D /* LockEnterPasscodeCoordinator.swift in Sources */,
 				A2B7ECAA2038122200828E7D /* ExportPrivateKeyCoordinator.swift in Sources */,
+				FD62974421AE5AB500E42A63 /* ContractTableViewController.swift in Sources */,
 				29E6E06E1FE897EE0079265A /* BrowserViewController.swift in Sources */,
 				2912CCF91F6A830700C6CBE3 /* AppDelegate.swift in Sources */,
 				7302405C204C65DF00B327DF /* CollectibleTokenCategory.swift in Sources */,
@@ -3220,6 +3231,7 @@
 				293248841F88CCD2008A9818 /* SplashState.swift in Sources */,
 				771A847320322F2500528D28 /* BrowserConfigurationViewController.swift in Sources */,
 				29DBF2A31F9DBFF400327C60 /* BackupCoordinator.swift in Sources */,
+				FD62974021AE50E400E42A63 /* DefinerApi.swift in Sources */,
 				2963B6C11F9AE0E4003063C1 /* Data.swift in Sources */,
 				77CB8398206B8E1C006F34A8 /* ScanQRCodeCoordinator.swift in Sources */,
 				29AD3D5920F5BD97007893C9 /* WalletsCoordinator.swift in Sources */,

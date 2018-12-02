@@ -81,7 +81,7 @@ extension TrustAPI: TargetType {
     var sampleData: Data {
         return Data()
     }
-
+    
     var headers: [String: String]? {
         return [
             "Content-type": "application/json",
