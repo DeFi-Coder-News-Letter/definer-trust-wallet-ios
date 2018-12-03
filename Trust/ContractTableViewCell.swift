@@ -4,6 +4,9 @@ import UIKit
 
 class ContractTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var loanAmount: UILabel!
+    @IBOutlet weak var contractType: UILabel!
+    @IBOutlet weak var createdOn: UILabel!
     @IBOutlet weak var contractName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

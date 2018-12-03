@@ -3,13 +3,15 @@
 import UIKit
 
 class ContractTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    @IBOutlet weak var navigationHeaderView: UIView!
     @IBOutlet weak var contractTableView: UITableView!
     var contracts = [ResourceData]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contractTableView.dataSource = self
         self.contractTableView.delegate = self
+        self.navigationHeaderView.tintColor = UIColor(red:0.00, green:0.63, blue:0.91, alpha:1.0)
+        self.navigationHeaderView.backgroundColor = UIColor(red:0.00, green:0.63, blue:0.91, alpha:1.0)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,7 +44,12 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractTableViewCell", for: indexPath) as! ContractTableViewCell
 
         // Configure the cell...
-        cell.contractName.text = self.contracts[indexPath.row].data?.name
+        let contractSummary = self.contracts[indexPath.row]
+        let contract = contractSummary.data
+        cell.contractName.text = contract?.name
+        cell.createdOn.text = contractSummary.createTime
+        cell.contractType.text = contract?.contractType
+        cell.loanAmount.text = String(format:"%f", (contract?.borrowAmount)!)
 
         return cell
     }
