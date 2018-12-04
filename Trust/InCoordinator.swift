@@ -186,16 +186,13 @@ class InCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let dashboardController =
             storyboard.instantiateViewController(withIdentifier: "MarketPlace")
-        
         tabBarController.viewControllers = [
             browserCoordinator.navigationController.childNavigationController,
-            walletCoordinator.navigationController.childNavigationController,
-            settingsCoordinator.navigationController.childNavigationController,
             dashboardController,
+            walletCoordinator.navigationController.childNavigationController,
+            settingsCoordinator.navigationController.childNavigationController
         ]
 
-        
-        
         navigationController.setViewControllers([tabBarController], animated: false)
         navigationController.setNavigationBarHidden(true, animated: false)
 
