@@ -49,7 +49,14 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         cell.contractName.text = contract?.name
         cell.createdOn.text = contractSummary.createTime
         cell.contractType.text = contract?.contractType
-        cell.loanAmount.text = String(format:"%f", (contract?.borrowAmount)!)
+        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!)
+        if contract?.loanType == "Borrower Initiated" {
+            let yourImage: UIImage = UIImage(named: "Listing_Borrow")!
+            cell.columnImage.image = yourImage
+        } else {
+            let yourImage: UIImage = UIImage(named: "Listing_Lend")!
+            cell.columnImage.image = yourImage
+        }
 
         return cell
     }
