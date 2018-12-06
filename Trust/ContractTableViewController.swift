@@ -42,14 +42,22 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractTableViewCell", for: indexPath) as! ContractTableViewCell
-
-        // Configure the cell...
+        
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
+        
+        let dateFormatter = DateFormatter()
+        // 2018-12-04 11:56:58.136374
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateStringParts = contractSummary.createTime!.components(separatedBy: ".")
+        let date = dateFormatter.date(from: dateStringParts[0])
+
+        // Configure the cell...
         cell.contractName.text = contract?.name
-        cell.createdOn.text = contractSummary.createTime
-        cell.contractType.text = contract?.contractType
-        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!)
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMM d h:mm a yyyy")
+        cell.createdOn.text = dateFormatter.string(from: date!)
+        cell.contractType.text = self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
+        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.tokenLabel)!
         if contract?.loanType == "Borrower Initiated" {
             let yourImage: UIImage = UIImage(named: "Listing_Borrow")!
             cell.columnImage.image = yourImage
@@ -59,6 +67,19 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         }
 
         return cell
+    }
+
+    func getTypeString(typeStr : String, tokenLabel: String, fundLabel: String) -> String {
+        switch(typeStr) {
+        case "T2E":
+            return tokenLabel + "to Eth"
+        case "E2T":
+            return "Eth to " + fundLabel
+        case "T2T":
+            return tokenLabel + " to " + fundLabel
+        default:
+            return "Unknown"
+        }
     }
 
     /*
