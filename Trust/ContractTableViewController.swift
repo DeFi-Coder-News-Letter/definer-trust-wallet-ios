@@ -42,10 +42,10 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractTableViewCell", for: indexPath) as! ContractTableViewCell
-        
+
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
-        
+
         let dateFormatter = DateFormatter()
         // 2018-12-04 11:56:58.136374
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -70,9 +70,9 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     func getTypeString(typeStr : String, tokenLabel: String, fundLabel: String) -> String {
-        switch(typeStr) {
+        switch typeStr {
         case "T2E":
-            return tokenLabel + "to Eth"
+            return tokenLabel + " to Eth"
         case "E2T":
             return "Eth to " + fundLabel
         case "T2T":
@@ -81,7 +81,16 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
             return "Unknown"
         }
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt
+        indexPath: IndexPath){
+        let contractSummary = self.contracts[indexPath.row]
+        let contract = contractSummary.data
+        let url = URL(string: "https://app.definer.org/main/loan/" + contract!.loanId!)!
+        //UIApplication.shared.openURL(url)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
