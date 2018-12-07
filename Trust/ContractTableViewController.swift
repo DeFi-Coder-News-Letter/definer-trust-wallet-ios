@@ -3,11 +3,24 @@
 import UIKit
 
 class ContractTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    private let refreshControl = UIRefreshControl()
+    
     @IBOutlet weak var navigationHeaderView: UIView!
     @IBOutlet weak var contractTableView: UITableView!
     var contracts = [ResourceData]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            contractTableView.refreshControl = refreshControl
+        } else {
+            contractTableView.addSubview(refreshControl)
+        }
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshTableData(_:)), for: .valueChanged)
+        
         self.contractTableView.dataSource = self
         self.contractTableView.delegate = self
         self.navigationHeaderView.tintColor = UIColor(red:0.00, green:0.63, blue:0.91, alpha:1.0)
@@ -28,6 +41,12 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
                 //Handle error or give feedback to the user
                 print(error.localizedDescription)
         }
+    }
+    
+    @objc private func refreshTableData(_ sender: Any) {
+        // Fetch Weather Data
+        self.contractTableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 
     // MARK: - Table view data source
@@ -57,7 +76,7 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         dateFormatter.setLocalizedDateFormatFromTemplate("MMM d h:mm a yyyy")
         cell.createdOn.text = dateFormatter.string(from: date!)
         cell.contractType.text = self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
-        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.tokenLabel)!
+        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.fundLabel)!
         if contract?.loanType == "Borrower Initiated" {
             let yourImage: UIImage = UIImage(named: "Listing_Borrow")!
             cell.columnImage.image = yourImage
