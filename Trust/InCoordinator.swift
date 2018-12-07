@@ -186,9 +186,12 @@ class InCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let dashboardController =
             storyboard.instantiateViewController(withIdentifier: "MarketPlace")
+        let createLoanController =
+            storyboard.instantiateViewController(withIdentifier: "CreateLoan")
         tabBarController.viewControllers = [
             browserCoordinator.navigationController.childNavigationController,
             dashboardController,
+            createLoanController,
             walletCoordinator.navigationController.childNavigationController,
             settingsCoordinator.navigationController.childNavigationController
         ]

@@ -194,10 +194,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sb-oG-dvu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.333333333333329"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-YW-WV9" customClass="BoxView" customModule="Trust" customModuleProvider="target">
-                                                                    <rect key="frame" x="2" y="2" width="371" height="76.333333333333329"/>
+                                                                    <rect key="frame" x="2" y="2" width="410" height="76.333333333333329"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2q-tN-D6C">
                                                                             <rect key="frame" x="1" y="1" width="142" height="64.333333333333329"/>
@@ -287,7 +287,7 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" white="0.93755241235097253" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -338,7 +338,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XTN-40-4rF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MarketPlace" image="stock_arrow-64x64" selectedImage="stock_arrow-64x64" id="bfY-nX-eLh"/>
+                    <tabBarItem key="tabBarItem" title="MarketPlace" image="Home-100x100" selectedImage="Home-100x100" id="bfY-nX-eLh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contractTableView" destination="RN5-oN-b8P" id="8az-9P-Rjt"/>
@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhl-hS-LYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1218.4000000000001" y="-188.42364532019704"/>
+            <point key="canvasLocation" x="-1558" y="-204"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="Mbi-aU-tHR">
@@ -451,12 +451,61 @@
             </objects>
             <point key="canvasLocation" x="-4402" y="163"/>
         </scene>
+        <!--CreateLoan-->
+        <scene sceneID="YjN-lu-jjg">
+            <objects>
+                <viewController storyboardIdentifier="CreateLoan" title="CreateLoan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vfB-w3-RuS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SY5-Ec-Ygw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-UH-5wK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-Qw-S1t" userLabel="NavigationHeader">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="ToO-2I-kMG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRk-mB-Dl9" userLabel="MainArea">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="722"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4lz-Qw-S1t" firstAttribute="top" secondItem="Umg-UH-5wK" secondAttribute="top" id="27D-rc-jiB"/>
+                                    <constraint firstAttribute="bottom" secondItem="DRk-mB-Dl9" secondAttribute="bottom" id="Fpl-b4-bGB"/>
+                                    <constraint firstAttribute="trailing" secondItem="DRk-mB-Dl9" secondAttribute="trailing" id="G9w-1w-os8"/>
+                                    <constraint firstItem="DRk-mB-Dl9" firstAttribute="top" secondItem="4lz-Qw-S1t" secondAttribute="bottom" id="Xow-JA-6qo"/>
+                                    <constraint firstItem="DRk-mB-Dl9" firstAttribute="leading" secondItem="Umg-UH-5wK" secondAttribute="leading" id="xFv-oj-vyy"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Umg-UH-5wK" secondAttribute="trailing" id="2Vx-jz-Jl5"/>
+                            <constraint firstItem="Umg-UH-5wK" firstAttribute="leading" secondItem="SY5-Ec-Ygw" secondAttribute="leading" id="4lt-N1-vuA"/>
+                            <constraint firstItem="Umg-UH-5wK" firstAttribute="top" secondItem="SY5-Ec-Ygw" secondAttribute="top" id="QBu-5M-wKy"/>
+                            <constraint firstAttribute="bottom" secondItem="Umg-UH-5wK" secondAttribute="bottom" id="Z0R-Gn-8CX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Qp-Xk-xZG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create Loan" image="Piggy Bank" selectedImage="Piggy Bank" id="eR2-eM-ilJ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2P-rh-pTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2455" y="10"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Home-100x100" width="33" height="33"/>
+        <image name="Piggy Bank" width="33" height="33"/>
         <image name="definer-tagline" width="700" height="400"/>
         <image name="grayline" width="586" height="5"/>
         <image name="no_transactions_mascot" width="87" height="106"/>
-        <image name="stock_arrow-64x64" width="21" height="21"/>
     </resources>
     <color key="tintColor" red="0.33658534499999998" green="0.67656131949999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
