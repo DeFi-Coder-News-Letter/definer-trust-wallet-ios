@@ -62,6 +62,22 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         // #warning Incomplete implementation, return the number of rows
         return self.contracts.count
     }
+    
+    func getLocalTimeString(dateString: String) -> String {
+        // "2018-12-08 20:29:18.849535"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss.SSSSSS"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let dateObj = dateFormatter.date(from: dateString)
+        let date = dateObj
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSXXXXX"
+        formatter.dateFormat = "MMM d, h:mm a"
+        let currentDateTime = formatter.string(from: date!)
+        return currentDateTime
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContractTableViewCell", for: indexPath) as! ContractTableViewCell
@@ -69,17 +85,9 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
 
-        let dateFormatter = DateFormatter()
-        // 2018-12-04 11:56:58.136374
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateStringParts = contractSummary.createTime!.components(separatedBy: ".")
-        let date = dateFormatter.date(from: dateStringParts[0])
-
         // Configure the cell...
         cell.contractName.text = contract?.name
-        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        cell.createdOn.text = dateFormatter.string(from: date!)
+        cell.createdOn.text = getLocalTimeString(dateString: contractSummary.createTime!)
         cell.contractType.text = self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
         cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.fundLabel)!
         if contract?.loanType == "Borrower Initiated" {
