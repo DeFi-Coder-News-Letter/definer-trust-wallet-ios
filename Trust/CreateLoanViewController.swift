@@ -34,10 +34,11 @@ class CreateLoanViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tapBGGesture)
         
         menuArea.layer.cornerRadius = 10
+        menuArea.layer.opacity = 1.0
         menuArea.layer.masksToBounds = false
         menuArea.layer.shadowOffset = CGSize(width: 1, height: 1)
         menuArea.layer.shadowRadius = 10
-        //menuArea.layer.shadowOpacity = 0.5
+        menuArea.layer.shadowOpacity = 0.5
     }
     
     @objc fileprivate func settingsBGTapped(sender: UITapGestureRecognizer){

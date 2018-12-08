@@ -31,6 +31,16 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.fetchData()
+    }
+    
+    @objc private func refreshTableData(_ sender: Any) {
+        self.fetchData()
+        self.contractTableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
+    func fetchData() {
         DefinerApi().getContracts()
             .done { contractClass -> Void in
                 //Do something with the JSON info
@@ -41,12 +51,6 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
                 //Handle error or give feedback to the user
                 print(error.localizedDescription)
         }
-    }
-    
-    @objc private func refreshTableData(_ sender: Any) {
-        // Fetch Weather Data
-        self.contractTableView.reloadData()
-        self.refreshControl.endRefreshing()
     }
 
     // MARK: - Table view data source
@@ -73,7 +77,8 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
 
         // Configure the cell...
         cell.contractName.text = contract?.name
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMM d h:mm a yyyy")
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
         cell.createdOn.text = dateFormatter.string(from: date!)
         cell.contractType.text = self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
         cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.fundLabel)!
