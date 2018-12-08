@@ -478,6 +478,7 @@
 		FD62974221AE59EF00E42A63 /* ContractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */; };
 		FD62974421AE5AB500E42A63 /* ContractTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */; };
 		FD68C51E21B7841C0020D00E /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68C51D21B7841C0020D00E /* BoxView.swift */; };
+		FD68C52021BC38A30020D00E /* CreateLoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */; };
 		FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */; };
 		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
 /* End PBXBuildFile section */
@@ -992,6 +993,7 @@
 		FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTableViewCell.swift; sourceTree = "<group>"; };
 		FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTableViewController.swift; sourceTree = "<group>"; };
 		FD68C51D21B7841C0020D00E /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoanViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1094,6 +1096,7 @@
 				29AD8A071F93E1F0008E10E7 /* Trust.entitlements */,
 				296106CD1F777E410006164B /* LaunchScreen.storyboard */,
 				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
+				FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */,
 				FD68C51D21B7841C0020D00E /* BoxView.swift */,
 				FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */,
 				FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */,
@@ -3024,6 +3027,7 @@
 				77B806B220778F6A005FDCBE /* URLViewModel.swift in Sources */,
 				29C70C7C201990540072E454 /* SendTransaction.swift in Sources */,
 				29AD3D5720F5BB08007893C9 /* WalletsViewModel.swift in Sources */,
+				FD68C52021BC38A30020D00E /* CreateLoanViewController.swift in Sources */,
 				771AA962200D5EC700D25403 /* PassphraseViewModel.swift in Sources */,
 				73C41C71201B46AD00243C6C /* LockEnterPasscodeViewModel.swift in Sources */,
 				291A1B671F98092F00ADEC80 /* ConfirmPaymentViewController.swift in Sources */,

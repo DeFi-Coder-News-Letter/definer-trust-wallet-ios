@@ -22,6 +22,14 @@ extension TabBarController: UITabBarControllerDelegate {
         if self.previousController == nil {
             self.previousController = viewController
         }
+        if viewController.className == "CreateLoanViewController" {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller =
+                storyboard.instantiateViewController(withIdentifier: "CreateLoanMenu")
+            delegate.coordinator.inCoordinator?.navigationController.present(controller, animated: true)
+            return false
+        }
 
         if self.previousController == viewController {
             if let nav = viewController as? UINavigationController,

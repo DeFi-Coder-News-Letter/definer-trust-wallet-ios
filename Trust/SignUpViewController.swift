@@ -13,7 +13,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.emailAddress.delegate = self
 
         // Do any additional setup after loading the view.
@@ -22,14 +21,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //textField.resignFirstResponder()
         //or
         self.view.endEditing(true)
         return true
     }
-    
     /*
     // MARK: - Navigation
 
@@ -83,6 +80,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 self.performSegue(withIdentifier: "ToWelcome", sender: self)
-        }
+            }
     }
 }
