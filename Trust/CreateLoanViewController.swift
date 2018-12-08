@@ -6,10 +6,26 @@ class CreateLoanViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var menuArea: UIView!
     var tapBGGesture: UITapGestureRecognizer!
+
+    @IBAction func OnLend(_ sender: Any) {
+        let url = URL(string: "https://app.definer.org/main/create/lend")!
+        //UIApplication.shared.openURL(url)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func OnBorrow(_ sender: Any) {
+        let url = URL(string: "https://app.definer.org/main/create/borrow")!
+        //UIApplication.shared.openURL(url)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
+        self.dismiss(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         tapBGGesture = UITapGestureRecognizer(target: self, action: #selector(settingsBGTapped))
         tapBGGesture.delegate = self
@@ -21,7 +37,7 @@ class CreateLoanViewController: UIViewController, UIGestureRecognizerDelegate {
         menuArea.layer.masksToBounds = false
         menuArea.layer.shadowOffset = CGSize(width: 1, height: 1)
         menuArea.layer.shadowRadius = 10
-        menuArea.layer.shadowOpacity = 0.5
+        //menuArea.layer.shadowOpacity = 0.5
     }
     
     @objc fileprivate func settingsBGTapped(sender: UITapGestureRecognizer){
