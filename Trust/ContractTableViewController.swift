@@ -84,6 +84,7 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
             let yourImage: UIImage = UIImage(named: "Listing_Lend")!
             cell.columnImage.image = yourImage
         }
+        cell.contractStatus.text = self.getStatusString(statusCode: (contract?.currentState)!)
 
         return cell
     }
@@ -96,6 +97,31 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
             return "Eth to " + fundLabel
         case "T2T":
             return tokenLabel + " to " + fundLabel
+        default:
+            return "Unknown"
+        }
+    }
+    
+    func getStatusString(statusCode: Int) -> String {
+        switch statusCode {
+        case -1:
+            return "Drafted"
+        case 0:
+            return "Init"
+        case 1:
+            return "Waiting For Lender"
+        case 2:
+            return "Waiting For Borrower"
+        case 3:
+            return "Waiting For Tokens"
+        case 4:
+            return "Funded"
+        case 5:
+            return "Finished"
+        case 6:
+            return "Closed"
+        case 7:
+            return "Default"
         default:
             return "Unknown"
         }

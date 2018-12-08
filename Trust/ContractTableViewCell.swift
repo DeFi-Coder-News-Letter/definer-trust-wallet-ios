@@ -4,6 +4,7 @@ import UIKit
 
 class ContractTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var contractStatus: UILabel!
     @IBOutlet weak var columnImage: UIImageView!
     @IBOutlet weak var loanAmount: UILabel!
     @IBOutlet weak var contractType: UILabel!
