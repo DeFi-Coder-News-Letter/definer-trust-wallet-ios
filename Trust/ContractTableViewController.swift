@@ -62,11 +62,15 @@ class ContractTableViewController: UIViewController, UITableViewDataSource, UITa
         // #warning Incomplete implementation, return the number of rows
         return self.contracts.count
     }
-    
     func getLocalTimeString(dateString: String) -> String {
-        // "2018-12-08 20:29:18.849535"
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss.SSSSSS"
+        
+        // "2018-12-08 20:29:18.849535"
+        //dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss.SSSSSS"
+        
+        // "2018-12-08 20:29:18"
+        dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss"
+        
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let dateObj = dateFormatter.date(from: dateString)
