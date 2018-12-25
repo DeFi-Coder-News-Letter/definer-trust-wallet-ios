@@ -536,8 +536,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYz-lg-hNI" userLabel="ContextMenu">
-                                <rect key="frame" x="281" y="169" width="120" height="120"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYz-lg-hNI" userLabel="ContextMenu">
+                                <rect key="frame" x="281" y="699" width="120" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full_circle_menu" translatesAutoresizingMaskIntoConstraints="NO" id="bK1-kh-qzW">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -741,8 +741,8 @@
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="leading" secondItem="h7V-6x-BqR" secondAttribute="leading" id="x6S-w8-VtF"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDs-n0-tjF" userLabel="CreateLoanButton">
-                                <rect key="frame" x="317" y="205" width="48" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDs-n0-tjF" userLabel="CreateLoanButton">
+                                <rect key="frame" x="317" y="735" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="bX5-ev-5Wv"/>
                                     <constraint firstAttribute="width" constant="48" id="h6r-Bf-SvD"/>
@@ -827,17 +827,17 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29M-po-Gsf" userLabel="WalletStackView">
-                                                        <rect key="frame" x="0.0" y="90" width="200" height="32"/>
+                                                        <rect key="frame" x="0.0" y="90" width="200" height="40"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="xqK-Fe-oee">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="Bau-RA-9Pm"/>
                                                                     <constraint firstAttribute="height" constant="40" id="T4Y-hl-8EJ"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHH-zA-dbf">
-                                                                <rect key="frame" x="40" y="0.0" width="160" height="32"/>
+                                                                <rect key="frame" x="40" y="0.0" width="160" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -845,17 +845,17 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPN-8U-gTY" userLabel="SettingStackView">
-                                                        <rect key="frame" x="0.0" y="127" width="200" height="40"/>
+                                                        <rect key="frame" x="0.0" y="134.99999999999994" width="200" height="32"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-1v-luH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="ODd-cz-kMa"/>
                                                                     <constraint firstAttribute="height" constant="40" id="g44-2M-9IZ"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-fd-bhu">
-                                                                <rect key="frame" x="40" y="0.0" width="160" height="40"/>
+                                                                <rect key="frame" x="40" y="0.0" width="160" height="32"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
