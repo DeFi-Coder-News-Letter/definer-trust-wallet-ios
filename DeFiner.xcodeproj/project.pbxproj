@@ -482,6 +482,7 @@
 		FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */; };
 		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
 		FDD5384021D22868007491BC /* DashboardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5383F21D22868007491BC /* DashboardBoxView.swift */; };
+		FDD5384421D2A39C007491BC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5384321D2A39C007491BC /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -998,6 +999,7 @@
 		FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		FDD5383F21D22868007491BC /* DashboardBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBoxView.swift; sourceTree = "<group>"; };
+		FDD5384321D2A39C007491BC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1110,6 +1112,7 @@
 				FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */,
 				FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */,
 				FD62973F21AE50E400E42A63 /* DefinerApi.swift */,
+				FDD5384321D2A39C007491BC /* DashboardViewController.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -2976,6 +2979,7 @@
 				293112371FC9A24600966EEA /* UIGestureRecognizer+Closure.swift in Sources */,
 				29BDF1A11FEE51A80023A45F /* GasLimitConfiguration.swift in Sources */,
 				779141D22102F44D007E8E16 /* WalletViewController.swift in Sources */,
+				FDD5384421D2A39C007491BC /* DashboardViewController.swift in Sources */,
 				615F10591FCBEF7C008A45AF /* OnboardingPage.swift in Sources */,
 				29F114EC1FA448F400114A29 /* TokensCoordinator.swift in Sources */,
 				29F1C85820036926003780D8 /* AppTracker.swift in Sources */,

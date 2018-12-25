@@ -378,7 +378,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="2df-CJ-hH4" userLabel="ButtonGroup">
-                                                <rect key="frame" x="54" y="10" width="133" height="30"/>
+                                                <rect key="frame" x="52" y="10" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0b-Aj-eaM" userLabel="Borrow">
@@ -527,7 +527,7 @@
         <!--Dashboard-->
         <scene sceneID="tP2-NX-MqP">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" title="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DfS-pM-5ub" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" title="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DfS-pM-5ub" customClass="DashboardViewController" customModule="Trust" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YhS-OH-Vdb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,30 +536,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDs-n0-tjF" userLabel="CreateLoanButton">
-                                <rect key="frame" x="317" y="730" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="bX5-ev-5Wv"/>
-                                    <constraint firstAttribute="width" constant="48" id="h6r-Bf-SvD"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="add_button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IE-OD-8Ll" userLabel="MainMenuButton">
-                                <rect key="frame" x="24" y="44" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Ans-R5-QfL"/>
-                                    <constraint firstAttribute="width" constant="32" id="UCE-tj-sR3"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="menu-filled-500"/>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-6x-BqR" userLabel="ContentView">
                                 <rect key="frame" x="-6" y="72" width="375" height="768"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QWS-dN-Iye" userLabel="RootStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                    <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QWS-dN-Iye" userLabel="RootStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="791"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HbQ-eE-GBL" userLabel="StatsStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="250.33333333333334"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwh-1e-YKA" userLabel="StatsLeftView">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="155"/>
@@ -642,7 +626,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-Bs-HYb" userLabel="FeedsRootView" customClass="DashboardBoxView" customModule="Trust" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="210" width="315" height="180"/>
+                                                <rect key="frame" x="30" y="270.33333333333331" width="315" height="250.33333333333331"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pp3-mc-qv8" userLabel="FeedsStackView">
                                                         <rect key="frame" x="0.0" y="10" width="315" height="18"/>
@@ -679,7 +663,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POV-ea-UJS" userLabel="SocialRootView" customClass="DashboardBoxView" customModule="Trust" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="420" width="315" height="180"/>
+                                                <rect key="frame" x="30" y="540.66666666666663" width="315" height="250.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPF-sh-gXS" userLabel="SocialStackView">
                                                         <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="18"/>
@@ -709,18 +693,70 @@
                                             <constraint firstItem="YHH-Bs-HYb" firstAttribute="leading" secondItem="QWS-dN-Iye" secondAttribute="leading" constant="30" id="ufj-Tz-OXV"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYz-lg-hNI" userLabel="ContextMenu">
+                                        <rect key="frame" x="287" y="656" width="124" height="125"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full_circle_menu" translatesAutoresizingMaskIntoConstraints="NO" id="bK1-kh-qzW">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3my-Yl-nvx">
+                                                <rect key="frame" x="21" y="8" width="33" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="0DY-V4-wlV"/>
+                                                    <constraint firstAttribute="width" constant="32" id="5Uh-KA-FL4"/>
+                                                </constraints>
+                                                <state key="normal" title="BORROW" image="borrow_button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-io-fxp">
+                                                <rect key="frame" x="4" y="54" width="33" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="NT8-nr-TGk"/>
+                                                    <constraint firstAttribute="width" constant="32" id="hxq-JX-1wn"/>
+                                                </constraints>
+                                                <state key="normal" title="LEND" image="lend_button"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bK1-kh-qzW" firstAttribute="top" secondItem="RYz-lg-hNI" secondAttribute="top" id="JFi-VA-EII"/>
+                                            <constraint firstAttribute="bottom" secondItem="bK1-kh-qzW" secondAttribute="bottom" id="Lgi-9e-1TB"/>
+                                            <constraint firstAttribute="trailing" secondItem="bK1-kh-qzW" secondAttribute="trailing" id="Pdp-gA-BT8"/>
+                                            <constraint firstItem="bK1-kh-qzW" firstAttribute="leading" secondItem="RYz-lg-hNI" secondAttribute="leading" id="dP7-FX-NVe"/>
+                                            <constraint firstAttribute="width" constant="120" id="gkz-6M-TJv"/>
+                                            <constraint firstAttribute="height" constant="120" id="iI5-ym-VxF"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="QWS-dN-Iye" secondAttribute="bottom" id="30e-K8-aV5"/>
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="width" secondItem="h7V-6x-BqR" secondAttribute="width" id="7Eu-w2-14l"/>
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="top" secondItem="h7V-6x-BqR" secondAttribute="top" id="Qn0-6i-Hko"/>
                                     <constraint firstAttribute="trailing" secondItem="QWS-dN-Iye" secondAttribute="trailing" id="XUS-w6-9gc"/>
+                                    <constraint firstAttribute="bottom" secondItem="RYz-lg-hNI" secondAttribute="bottom" constant="21" id="gBA-Z1-l1Y"/>
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="top" secondItem="h7V-6x-BqR" secondAttribute="top" id="hnL-Vc-iJB"/>
                                     <constraint firstAttribute="trailing" secondItem="QWS-dN-Iye" secondAttribute="trailing" id="hqh-Vl-r9s"/>
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="leading" secondItem="h7V-6x-BqR" secondAttribute="leading" id="pLE-hS-Ibk"/>
                                     <constraint firstItem="QWS-dN-Iye" firstAttribute="leading" secondItem="h7V-6x-BqR" secondAttribute="leading" id="x6S-w8-VtF"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDs-n0-tjF" userLabel="CreateLoanButton">
+                                <rect key="frame" x="317" y="730" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="bX5-ev-5Wv"/>
+                                    <constraint firstAttribute="width" constant="48" id="h6r-Bf-SvD"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add_button"/>
+                                <connections>
+                                    <action selector="onCreateLoanMenu:" destination="DfS-pM-5ub" eventType="touchUpInside" id="4hg-vD-uXd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IE-OD-8Ll" userLabel="MainMenuButton">
+                                <rect key="frame" x="24" y="44" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Ans-R5-QfL"/>
+                                    <constraint firstAttribute="width" constant="32" id="UCE-tj-sR3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="menu-filled-500"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -730,11 +766,18 @@
                             <constraint firstItem="ndt-Zj-BCk" firstAttribute="trailing" secondItem="TDs-n0-tjF" secondAttribute="trailing" constant="10" id="aBg-fU-SMg"/>
                             <constraint firstItem="1IE-OD-8Ll" firstAttribute="leading" secondItem="YhS-OH-Vdb" secondAttribute="leadingMargin" constant="8" id="bVj-VO-VF1"/>
                             <constraint firstItem="ndt-Zj-BCk" firstAttribute="bottom" secondItem="TDs-n0-tjF" secondAttribute="bottom" id="fkn-TA-zdX"/>
+                            <constraint firstItem="RYz-lg-hNI" firstAttribute="centerX" secondItem="TDs-n0-tjF" secondAttribute="centerX" id="gTu-Oc-4ag"/>
                             <constraint firstItem="h7V-6x-BqR" firstAttribute="leading" secondItem="ndt-Zj-BCk" secondAttribute="leading" id="pnj-Qj-gvE"/>
                             <constraint firstAttribute="bottom" secondItem="h7V-6x-BqR" secondAttribute="bottom" id="tYH-7c-yid"/>
+                            <constraint firstItem="RYz-lg-hNI" firstAttribute="centerY" secondItem="TDs-n0-tjF" secondAttribute="centerY" id="yKs-MG-OsT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ndt-Zj-BCk"/>
                     </view>
+                    <connections>
+                        <outlet property="borrowButton" destination="3my-Yl-nvx" id="5Mt-TE-zV4"/>
+                        <outlet property="contextMenuView" destination="RYz-lg-hNI" id="lE3-px-Kdy"/>
+                        <outlet property="lendButton" destination="hAI-io-fxp" id="fcr-Np-Jiv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5q-3t-qkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -794,8 +837,11 @@
         <image name="Piggy Bank" width="33" height="33"/>
         <image name="User" width="32" height="32"/>
         <image name="add_button" width="162" height="162"/>
+        <image name="borrow_button" width="40" height="40"/>
         <image name="definer-tagline" width="700" height="400"/>
+        <image name="full_circle_menu" width="160" height="160"/>
         <image name="grayline" width="586" height="5"/>
+        <image name="lend_button" width="40" height="40"/>
         <image name="menu-filled-500" width="166" height="166"/>
         <image name="nasa-53884" width="1418" height="944"/>
         <image name="no_transactions_mascot" width="87" height="106"/>
