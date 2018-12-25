@@ -21,7 +21,6 @@ class DashboardViewController: UIViewController {
                 self.contextMenuView.transform = .identity
             }
         })
-        
         UIView.animate(withDuration: 0.5, delay:0.2, usingSpringWithDamping: 0.3, initialSpringVelocity:0, options: [], animations: {
             if self.contextMenuView.transform == .identity {
                 self.borrowButton.transform = .identity
