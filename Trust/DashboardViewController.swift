@@ -8,7 +8,6 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var contextMenuView: UIView!
     @IBOutlet weak var lendButton: UIButton!
     @IBOutlet weak var borrowButton: UIButton!
-    
     var tapBGGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
@@ -17,7 +16,6 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view.
         closeContextMenu()
         closeMainMenu()
-        
         // Do any additional setup after loading the view.
         tapBGGesture = UITapGestureRecognizer(target: self, action: #selector(settingsBGTapped))
         tapBGGesture.delegate = self
@@ -25,8 +23,8 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         tapBGGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapBGGesture)
     }
-    @objc fileprivate func settingsBGTapped(sender: UITapGestureRecognizer){
-        if sender.state == UIGestureRecognizerState.ended{
+    @objc fileprivate func settingsBGTapped(sender: UITapGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.ended {
             if !mainMenuView.isHidden && !mainMenuView.bounds.contains(sender.location(in: mainMenuView)) {
                 self.closeMainMenu()
             }
@@ -55,11 +53,9 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         self.borrowButton.transform = CGAffineTransform(translationX: 0, y:15)
         self.lendButton.transform = CGAffineTransform(translationX: 11, y: 11)
     }
-    
     func closeMainMenu() {
         self.mainMenuView.isHidden = true
     }
-    
     @IBAction func onMainMenu(_ sender: Any) {
         self.mainMenuView.isHidden = false
     }
