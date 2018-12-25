@@ -4,6 +4,7 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
+    @IBOutlet weak var mainMenuView: UIView!
     @IBOutlet weak var contextMenuView: UIView!
     @IBOutlet weak var lendButton: UIButton!
     @IBOutlet weak var borrowButton: UIButton!
@@ -32,6 +33,14 @@ class DashboardViewController: UIViewController {
         contextMenuView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         self.borrowButton.transform = CGAffineTransform(translationX: 0, y:15)
         self.lendButton.transform = CGAffineTransform(translationX: 11, y: 11)
+    }
+    
+    func closeMainMenu() {
+        self.mainMenuView.isHidden = true
+    }
+    
+    @IBAction func onMainMenu(_ sender: Any) {
+        self.mainMenuView.isHidden = false
     }
     /*
     // MARK: - Navigation
