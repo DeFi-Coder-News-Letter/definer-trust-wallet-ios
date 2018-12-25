@@ -700,7 +700,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-io-fxp">
-                                                <rect key="frame" x="3" y="62" width="32" height="33"/>
+                                                <rect key="frame" x="5" y="60" width="32" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="NT8-nr-TGk"/>
                                                     <constraint firstAttribute="width" constant="32" id="hxq-JX-1wn"/>
@@ -720,7 +720,7 @@
                                             <constraint firstItem="bK1-kh-qzW" firstAttribute="top" secondItem="RYz-lg-hNI" secondAttribute="top" id="JFi-VA-EII"/>
                                             <constraint firstAttribute="bottom" secondItem="bK1-kh-qzW" secondAttribute="bottom" id="Lgi-9e-1TB"/>
                                             <constraint firstAttribute="trailing" secondItem="bK1-kh-qzW" secondAttribute="trailing" id="Pdp-gA-BT8"/>
-                                            <constraint firstItem="hAI-io-fxp" firstAttribute="leading" secondItem="RYz-lg-hNI" secondAttribute="leading" constant="10" id="TXk-d6-cXX"/>
+                                            <constraint firstItem="hAI-io-fxp" firstAttribute="leading" secondItem="RYz-lg-hNI" secondAttribute="leading" constant="5" id="TXk-d6-cXX"/>
                                             <constraint firstItem="hAI-io-fxp" firstAttribute="top" secondItem="RYz-lg-hNI" secondAttribute="top" constant="60" id="U65-1Z-kbD"/>
                                             <constraint firstItem="3my-Yl-nvx" firstAttribute="top" secondItem="RYz-lg-hNI" secondAttribute="top" constant="5" id="cE0-tH-CmE"/>
                                             <constraint firstItem="bK1-kh-qzW" firstAttribute="leading" secondItem="RYz-lg-hNI" secondAttribute="leading" id="dP7-FX-NVe"/>
@@ -753,10 +753,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IE-OD-8Ll" userLabel="MainMenuButton">
-                                <rect key="frame" x="24" y="44" width="32" height="32"/>
+                                <rect key="frame" x="24" y="44" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Ans-R5-QfL"/>
-                                    <constraint firstAttribute="width" constant="32" id="UCE-tj-sR3"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ans-R5-QfL"/>
+                                    <constraint firstAttribute="width" constant="30" id="UCE-tj-sR3"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="menu-filled-500"/>
                             </button>
