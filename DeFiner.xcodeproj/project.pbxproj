@@ -481,6 +481,7 @@
 		FD68C52021BC38A30020D00E /* CreateLoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */; };
 		FD6A1DAC21A4EE0900AD9BCB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */; };
 		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
+		FDD5384021D22868007491BC /* DashboardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5383F21D22868007491BC /* DashboardBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -996,6 +997,7 @@
 		FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoanViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		FDD5383F21D22868007491BC /* DashboardBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1098,6 +1100,7 @@
 				FD15E5CF219A806E0053BA9C /* Main.storyboard */,
 				FD68C51F21BC38A30020D00E /* CreateLoanViewController.swift */,
 				FD68C51D21B7841C0020D00E /* BoxView.swift */,
+				FDD5383F21D22868007491BC /* DashboardBoxView.swift */,
 				FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */,
 				FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */,
 				FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */,
@@ -3061,6 +3064,7 @@
 				77B3BF3C201908ED00EEC15A /* ConfirmCoordinator.swift in Sources */,
 				FD68C51E21B7841C0020D00E /* BoxView.swift in Sources */,
 				7704837020FFD2F700837735 /* TransactionsViewController.swift in Sources */,
+				FDD5384021D22868007491BC /* DashboardBoxView.swift in Sources */,
 				ACE3F4EC211485F8003CB0A0 /* NSLocale.swift in Sources */,
 				2928500E2096A69E00EC5AFB /* AboutViewModel.swift in Sources */,
 				298542F91FBE9A0100CB5081 /* CryptoAddressValidator.swift in Sources */,
