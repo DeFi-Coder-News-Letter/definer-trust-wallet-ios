@@ -9,7 +9,19 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var lendButton: UIButton!
     @IBOutlet weak var borrowButton: UIButton!
     var tapBGGesture: UITapGestureRecognizer!
-    
+    @IBAction func onListButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "showLoanList", sender: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

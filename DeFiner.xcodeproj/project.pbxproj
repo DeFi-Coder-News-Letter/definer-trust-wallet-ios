@@ -483,6 +483,7 @@
 		FD6A1DAE21A4F06F00AD9BCB /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */; };
 		FDD5384021D22868007491BC /* DashboardBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5383F21D22868007491BC /* DashboardBoxView.swift */; };
 		FDD5384421D2A39C007491BC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5384321D2A39C007491BC /* DashboardViewController.swift */; };
+		FDD5384A21D2F0AD007491BC /* LoanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5384921D2F0AD007491BC /* LoanListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1000,6 +1001,7 @@
 		FD6A1DAD21A4F06F00AD9BCB /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		FDD5383F21D22868007491BC /* DashboardBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBoxView.swift; sourceTree = "<group>"; };
 		FDD5384321D2A39C007491BC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		FDD5384921D2F0AD007491BC /* LoanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1113,6 +1115,7 @@
 				FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */,
 				FD62973F21AE50E400E42A63 /* DefinerApi.swift */,
 				FDD5384321D2A39C007491BC /* DashboardViewController.swift */,
+				FDD5384921D2F0AD007491BC /* LoanListViewController.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -3020,6 +3023,7 @@
 				296421951F70C1EC00EB363B /* LoadingView.swift in Sources */,
 				736D6ECF20DBD946008C2CC4 /* PrivacyViewController.swift in Sources */,
 				2961BD071FB146EB00C4B840 /* ChainState.swift in Sources */,
+				FDD5384A21D2F0AD007491BC /* LoanListViewController.swift in Sources */,
 				A2B7ECAC2038FFBC00828E7D /* ExportPrivateKeyViewModel.swift in Sources */,
 				73D26837202E827E009777A1 /* DecimalFormatter.swift in Sources */,
 				29285B421F6FB3E60044CF29 /* SendViewController.swift in Sources */,
