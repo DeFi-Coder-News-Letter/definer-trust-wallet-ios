@@ -473,6 +473,7 @@
 		FD15E5D2219A92EE0053BA9C /* SignOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */; };
 		FD4C4A4621D4A1EE00B51466 /* LoanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C4A4521D4A1EE00B51466 /* LoanTableViewCell.swift */; };
 		FD4C4A4A21D5510500B51466 /* DeFinerWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C4A4921D5510500B51466 /* DeFinerWalletViewController.swift */; };
+		FD4C4A4C21D574D000B51466 /* WalletTokenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C4A4B21D574CF00B51466 /* WalletTokenViewCell.swift */; };
 		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
 		FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */; };
 		FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */; };
@@ -993,6 +994,7 @@
 		FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOnViewController.swift; sourceTree = "<group>"; };
 		FD4C4A4521D4A1EE00B51466 /* LoanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanTableViewCell.swift; sourceTree = "<group>"; };
 		FD4C4A4921D5510500B51466 /* DeFinerWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeFinerWalletViewController.swift; sourceTree = "<group>"; };
+		FD4C4A4B21D574CF00B51466 /* WalletTokenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTokenViewCell.swift; sourceTree = "<group>"; };
 		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
 		FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
@@ -1122,6 +1124,7 @@
 				FDD5384321D2A39C007491BC /* DashboardViewController.swift */,
 				FDD5384921D2F0AD007491BC /* LoanListViewController.swift */,
 				FD4C4A4921D5510500B51466 /* DeFinerWalletViewController.swift */,
+				FD4C4A4B21D574CF00B51466 /* WalletTokenViewCell.swift */,
 			);
 			path = Trust;
 			sourceTree = "<group>";
@@ -3039,6 +3042,7 @@
 				903682F4204A714C00013479 /* BookmarksStore.swift in Sources */,
 				295B61D41FE7D5B500642E60 /* CurrencyFormatter.swift in Sources */,
 				77EAD88620E1C00C00D14AA2 /* WalletInfoType.swift in Sources */,
+				FD4C4A4C21D574D000B51466 /* WalletTokenViewCell.swift in Sources */,
 				775DF42B203693CD009CD082 /* Preferences.swift in Sources */,
 				296421991F70C1F900EB363B /* EmptyView.swift in Sources */,
 				29AD3D5120F5B9F9007893C9 /* WalletsViewController.swift in Sources */,
