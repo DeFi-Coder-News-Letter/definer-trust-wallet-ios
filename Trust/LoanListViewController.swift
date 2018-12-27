@@ -178,9 +178,9 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
                 cellExpanded = false
             }
         } else {
-            expandedRow = indexPath.row
             cellExpanded = true
         }
+        expandedRow = indexPath.row
         tableView.beginUpdates()
         tableView.endUpdates()
     }
