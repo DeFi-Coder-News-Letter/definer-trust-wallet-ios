@@ -471,6 +471,7 @@
 		D9F052FDC5B72E024DD05F0D /* Pods_TrustTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48A17FC2CC895AF2BB871D0 /* Pods_TrustTests.framework */; };
 		FD15E5D0219A806F0053BA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD15E5CF219A806E0053BA9C /* Main.storyboard */; };
 		FD15E5D2219A92EE0053BA9C /* SignOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */; };
+		FD4C4A4621D4A1EE00B51466 /* LoanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C4A4521D4A1EE00B51466 /* LoanTableViewCell.swift */; };
 		FD50D71921A1C95500D09CC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71821A1C95500D09CC6 /* RegisterButton.swift */; };
 		FD50D71F21A1F7FA00D09CC6 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */; };
 		FD50D72121A1FAEA00D09CC6 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */; };
@@ -989,6 +990,7 @@
 		DDF643F2D99BCE8E6139C057 /* Pods-TrustTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrustTests/Pods-TrustTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD15E5CF219A806E0053BA9C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOnViewController.swift; sourceTree = "<group>"; };
+		FD4C4A4521D4A1EE00B51466 /* LoanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanTableViewCell.swift; sourceTree = "<group>"; };
 		FD50D71821A1C95500D09CC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		FD50D71E21A1F7FA00D09CC6 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
 		FD50D72021A1FAEA00D09CC6 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 				FDD5383F21D22868007491BC /* DashboardBoxView.swift */,
 				FD62974321AE5AB500E42A63 /* ContractTableViewController.swift */,
 				FD62974121AE59EF00E42A63 /* ContractTableViewCell.swift */,
+				FD4C4A4521D4A1EE00B51466 /* LoanTableViewCell.swift */,
 				FD6A1DAB21A4EE0800AD9BCB /* SignUpViewController.swift */,
 				FD15E5D1219A92EE0053BA9C /* SignOnViewController.swift */,
 				FD50D71821A1C95500D09CC6 /* RegisterButton.swift */,
@@ -3011,6 +3014,7 @@
 				771D0646208B3FAD00016B72 /* MonetaryAmountViewModel.swift in Sources */,
 				29FC0CB81F8299510036089F /* Coordinator.swift in Sources */,
 				296106C61F7645CC0006164B /* TokensViewController.swift in Sources */,
+				FD4C4A4621D4A1EE00B51466 /* LoanTableViewCell.swift in Sources */,
 				771DC9D520F36555003E2CE2 /* UIBarButtonItem.swift in Sources */,
 				29282B531F7630970067F88D /* Token.swift in Sources */,
 				29F1C85D2003698A003780D8 /* WellDoneViewController.swift in Sources */,

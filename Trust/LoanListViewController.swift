@@ -2,13 +2,20 @@
 
 import UIKit
 
-class LoanListViewController: UIViewController {
+class LoanListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var contractTableView: UITableView!
     @IBOutlet weak var categorySegmentControl: UISegmentedControl!
     @IBOutlet weak var mainMenuView: UIView!
+    var contracts = [ResourceData]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        contractTableView.delegate = self
+        contractTableView.dataSource = self
+        contractTableView.backgroundColor = UIColor.clear
+        
         // Do any additional setup after loading the view.
         closeContextMenu()
         closeMainMenu()
@@ -24,6 +31,7 @@ class LoanListViewController: UIViewController {
         ]
         categorySegmentControl.setTitleTextAttributes(normalAttributes, for: .normal)
         categorySegmentControl.setTitleTextAttributes(selectedAttributes, for: .selected)
+        self.fetchData()
     }
     func closeContextMenu() {
     }
@@ -31,7 +39,7 @@ class LoanListViewController: UIViewController {
     }
     @IBAction func onMainMenu(_ sender: Any) {
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
@@ -41,6 +49,125 @@ class LoanListViewController: UIViewController {
         super.viewWillDisappear(animated)
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    @objc private func refreshTableData(_ sender: Any) {
+        self.fetchData()
+        self.contractTableView.reloadData()
+        //self.refreshControl.endRefreshing()
+    }
+    func fetchData() {
+        DefinerApi().getContracts()
+            .done { contractClass -> Void in
+                //Do something with the JSON info
+                self.contracts = contractClass.data!
+                self.contractTableView.reloadData()
+            }
+            .catch { error in
+                //Handle error or give feedback to the user
+                print(error.localizedDescription)
+            }
+    }
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.contracts.count
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    func getLocalTimeString(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        
+        // "2018-12-08 20:29:18.849535"
+        //dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss.SSSSSS"
+        
+        // "2018-12-08 20:29:18"
+        dateFormatter.dateFormat = "yyyy-M-dd HH:mm:ss"
+        
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let dateObj = dateFormatter.date(from: dateString)
+        let date = dateObj
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSXXXXX"
+        formatter.dateFormat = "MMM d, h:mm a"
+        let currentDateTime = formatter.string(from: date!)
+        return currentDateTime
+    }
+    
+    
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "loanListCell", for: indexPath) as! LoanTableViewCell
+        
+        
+        let contractSummary = self.contracts[indexPath.row]
+        let contract = contractSummary.data
+        // Configure the cell...
+        cell.loanName.text = contract?.name
+        cell.loanCreatedOn.text = getLocalTimeString(dateString: contractSummary.createTime!)
+        cell.loanType.text = self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
+        cell.loanAmount.text = String(format:"%.2f", (contract?.borrowAmount)!) + " " + (contract?.fundLabel)!
+//        if contract?.loanType == "Borrower Initiated" {
+//            let yourImage: UIImage = UIImage(named: "Listing_Borrow")!
+//            cell.columnImage.image = yourImage
+//        } else {
+//            let yourImage: UIImage = UIImage(named: "Listing_Lend")!
+//            cell.columnImage.image = yourImage
+//        }
+        cell.loanStatus.text = self.getStatusString(statusCode: (contract?.currentState)!)
+        return cell
+    }
+    func getTypeString(typeStr : String, tokenLabel: String, fundLabel: String) -> String {
+        switch typeStr {
+        case "T2E":
+            return tokenLabel + " to Eth"
+        case "E2T":
+            return "Eth to " + fundLabel
+        case "T2T":
+            return tokenLabel + " to " + fundLabel
+        default:
+            return "Unknown"
+        }
+    }
+    func getStatusString(statusCode: Int) -> String {
+        switch statusCode {
+        case -1:
+            return "Drafted"
+        case 0:
+            return "Init"
+        case 1:
+            return "Waiting For Lender"
+        case 2:
+            return "Waiting For Borrower"
+        case 3:
+            return "Waiting For Tokens"
+        case 4:
+            return "Funded"
+        case 5:
+            return "Finished"
+        case 6:
+            return "Closed"
+        case 7:
+            return "Default"
+        default:
+            return "Unknown"
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt
+        indexPath: IndexPath){
+        let contractSummary = self.contracts[indexPath.row]
+        let contract = contractSummary.data
+        let url = URL(string: "https://app.definer.org/main/loan/" + contract!.loanId!)!
+        //UIApplication.shared.openURL(url)
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
     }
     /*
     // MARK: - Navigation
