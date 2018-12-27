@@ -120,6 +120,11 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "loanListCell", for: indexPath) as! LoanTableViewCell
         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        bgColorView.layer.cornerRadius = 5
+        cell.selectedBackgroundView = bgColorView
+
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
         // Configure the cell...
