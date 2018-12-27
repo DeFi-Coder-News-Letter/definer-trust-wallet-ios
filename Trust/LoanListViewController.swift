@@ -190,10 +190,10 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
             if cellExpanded {
                 return 250
             } else {
-                return 50
+                return 20
             }
         }
-        return 50
+        return 20
     }
     /*
     // MARK: - Navigation
