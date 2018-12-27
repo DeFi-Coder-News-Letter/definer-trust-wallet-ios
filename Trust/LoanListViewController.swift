@@ -119,6 +119,7 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "loanListCell", for: indexPath) as! LoanTableViewCell
+        
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
         // Configure the cell...
