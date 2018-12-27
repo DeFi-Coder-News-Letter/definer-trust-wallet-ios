@@ -122,7 +122,7 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-        bgColorView.layer.cornerRadius = 5
+        bgColorView.layer.cornerRadius = 3
         cell.selectedBackgroundView = bgColorView
 
         let contractSummary = self.contracts[indexPath.row]
@@ -140,6 +140,20 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
 //            cell.columnImage.image = yourImage
 //        }
         cell.loanStatus.text = self.getStatusString(statusCode: (contract?.currentState)!)
+        
+        // Row 1
+        cell.loanDetailLabel1.text = "name\n" + (contract?.name)!
+        cell.loanDetailLabel2.text = "status\n" + self.getStatusString(statusCode: (contract?.currentState)!)
+        // Row 2
+        cell.loanDetailLabel3.text = "loan type\n" + self.getTypeString(typeStr: (contract?.contractType)!, tokenLabel: (contract?.tokenLabel)!, fundLabel: (contract?.fundLabel)!)
+        cell.loanDetailLabel4.text = "collateral amount\n" + String(format:"%.2f", (contract?.collateralAmount)!)
+        // Row 3
+        cell.loanDetailLabel5.text = "loan id\n" + (contract?.loanId)!
+        cell.loanDetailLabel6.text = "borrow amount\n" + String(format:"%.2f", (contract?.borrowAmount)!)
+        // Row 4
+        cell.loanDetailLabel7.text = "loan term\n" + String(format:"%d", (contract?.totalLoanTerm)!)
+        cell.loanDetailLabel8.text = "installment amount\n" + String(format:"%.2f", (contract?.installmentPay)!)
+        
         return cell
     }
     func getTypeString(typeStr : String, tokenLabel: String, fundLabel: String) -> String {
@@ -165,15 +179,19 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
         case 2:
             return "Waiting For Borrower"
         case 3:
-            return "Waiting For Tokens"
+            return "Waiting For Collateral"
         case 4:
-            return "Funded"
+            return "Waiting For Funds"
         case 5:
-            return "Finished"
+            return "Funded"
         case 6:
-            return "Closed"
+            return "Finished"
         case 7:
+            return "Closed"
+        case 8:
             return "Default"
+        case 9:
+            return "Cancelled"
         default:
             return "Unknown"
         }
