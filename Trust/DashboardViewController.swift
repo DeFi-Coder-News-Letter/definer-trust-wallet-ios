@@ -21,6 +21,8 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillDisappear(animated)
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        closeMainMenu()
+        closeContextMenu()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
