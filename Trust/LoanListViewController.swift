@@ -8,6 +8,9 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var categorySegmentControl: UISegmentedControl!
     @IBOutlet weak var mainMenuView: UIView!
     var contracts = [ResourceData]()
+    var cellExpanded = false
+    var expandedRow = 0
+    var lastExpandedRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,6 +171,29 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
         //UIApplication.shared.openURL(url)
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
+        
+        if cellExpanded {
+            if indexPath.row == expandedRow {
+                //collapse current already expanded row
+                cellExpanded = false
+            }
+        } else {
+            expandedRow = indexPath.row
+            cellExpanded = true
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == expandedRow {
+            if cellExpanded {
+                return 250
+            } else {
+                return 50
+            }
+        }
+        return 50
     }
     /*
     // MARK: - Navigation
