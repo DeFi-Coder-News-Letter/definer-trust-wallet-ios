@@ -4,6 +4,8 @@ import UIKit
 
 class LoanListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    private let refreshControl = UIRefreshControl()
+
     @IBOutlet weak var contractTableView: UITableView!
     @IBOutlet weak var categorySegmentControl: UISegmentedControl!
     @IBOutlet weak var mainMenuView: UIView!
@@ -14,6 +16,16 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            contractTableView.refreshControl = refreshControl
+        } else {
+            contractTableView.addSubview(refreshControl)
+        }
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshTableData(_:)), for: .valueChanged)
+        
         
         contractTableView.delegate = self
         contractTableView.dataSource = self
@@ -59,7 +71,7 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
     @objc private func refreshTableData(_ sender: Any) {
         self.fetchData()
         self.contractTableView.reloadData()
-        //self.refreshControl.endRefreshing()
+        self.refreshControl.endRefreshing()
     }
     func fetchData() {
         DefinerApi().getContracts()
@@ -105,13 +117,8 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
         let currentDateTime = formatter.string(from: date!)
         return currentDateTime
     }
-    
-    
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "loanListCell", for: indexPath) as! LoanTableViewCell
-        
-        
         let contractSummary = self.contracts[indexPath.row]
         let contract = contractSummary.data
         // Configure the cell...
@@ -173,7 +180,6 @@ class LoanListViewController: UIViewController, UITableViewDataSource, UITableVi
         //UIApplication.shared.openURL(url)
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //appDelegate.coordinator.inCoordinator?.showTab(.browser(openURL: url))
-        
         if cellExpanded {
             if indexPath.row == expandedRow {
                 //collapse current already expanded row
