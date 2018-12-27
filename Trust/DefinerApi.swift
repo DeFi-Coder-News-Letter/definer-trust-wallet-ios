@@ -4,6 +4,34 @@ import Foundation
 import Alamofire
 import PromiseKit
 
+struct ArticleData {
+    let posttime: String?
+    let content: String?
+    
+    init(_ dict: [String: Any]) {
+        posttime = dict["posttime"] as? String
+        content = dict["content"] as? String
+    }
+    
+    func toDictionary() -> [String: Any] {
+        var jsonDict = [String: Any]()
+        jsonDict["posttime"] = posttime
+        jsonDict["content"] = content
+        return jsonDict
+    }
+}
+
+struct ArticleClass {
+    var data: [ArticleData]? = nil
+    
+    init(_ dict: [[String: Any]]) {
+        
+        if let dataDictArray = dict as? [[String: Any]] {
+            data = dataDictArray.map { ArticleData($0) }
+        }
+    }
+}
+
 struct ContractData {
     
     let address: String?
@@ -184,6 +212,33 @@ class DefinerApi {
                             return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
                         }
                         seal.fulfill(ContractClass(jsonText))
+                    case .failure(let error):
+                        seal.reject(error)
+                    }
+            }
+        }
+    }
+    
+    func getArticles() -> Promise<ArticleClass> {
+        return Promise { seal in
+            Alamofire.request("https://app.definer.org/definer/api/v1.0/posts")
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let json):
+                        print(response.data)
+                        guard let json = json as? [[String: Any]] else {
+                            return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        // make sure we got some JSON since that's what we expect
+                        guard let jsonText = response.result.value as? [[String: Any]] else {
+                            print("didn't get todo object as JSON from API")
+                            if let error = response.result.error {
+                                print("Error: \(error)")
+                            }
+                            return seal.reject(AFError.responseValidationFailed(reason: .dataFileNil))
+                        }
+                        seal.fulfill(ArticleClass(jsonText))
                     case .failure(let error):
                         seal.reject(error)
                     }

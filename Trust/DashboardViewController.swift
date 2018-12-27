@@ -2,12 +2,16 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
+class DashboardViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var feedsTableView: UITableView!
     @IBOutlet weak var mainMenuView: UIView!
     @IBOutlet weak var contextMenuView: UIView!
     @IBOutlet weak var lendButton: UIButton!
     @IBOutlet weak var borrowButton: UIButton!
+    
+    var articleList: [ArticleData] = []
+    
     var tapBGGesture: UITapGestureRecognizer!
     
     @IBAction func onListButton(_ sender: Any) {
@@ -43,6 +47,8 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         tapBGGesture.numberOfTapsRequired = 1
         tapBGGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapBGGesture)
+        
+        self.fetchData()
     }
     @objc fileprivate func settingsBGTapped(sender: UITapGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.ended {
@@ -89,5 +95,38 @@ class DashboardViewController: UIViewController, UIGestureRecognizerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func fetchData() {
+        DefinerApi().getArticles()
+            .done { articles -> Void in
+                //Do something with the JSON info
+                self.articleList = articles.data!
+                self.feedsTableView.reloadData()
+            }
+            .catch { error in
+                //Handle error or give feedback to the user
+                print(error.localizedDescription)
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.articleList.count > 3 ? 3 : self.articleList.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedsTableCell", for: indexPath) as! UITableViewCell
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        bgColorView.layer.cornerRadius = 3
+        cell.selectedBackgroundView = bgColorView
+        cell.textLabel!.text = self.articleList[indexPath.row].content
+        return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
 }
