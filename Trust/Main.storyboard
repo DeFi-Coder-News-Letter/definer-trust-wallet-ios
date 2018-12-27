@@ -1326,9 +1326,46 @@
                                                 <rect key="frame" x="30" y="10" width="315" height="160"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="15,000 FIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gS-pH-ovn">
+                                                <rect key="frame" x="157" y="119" width="61" height="14.333333333333258"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-eu-8kU">
+                                                <rect key="frame" x="132.66666666666666" y="60" width="110" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="WQT-wp-oaq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NETWORK: Rinkeby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-eb-p6t">
+                                                <rect key="frame" x="36" y="14" width="95" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-fe-iLs">
+                                                <rect key="frame" x="315" y="140" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fqb-Vi-J8C"/>
+                                                    <constraint firstAttribute="width" constant="30" id="uAF-37-XQW"/>
+                                                </constraints>
+                                                <state key="normal" image="white_add_sign"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="vwH-eu-8kU" firstAttribute="centerX" secondItem="fmH-f9-1vV" secondAttribute="centerX" id="0sk-dj-rxq"/>
                                             <constraint firstAttribute="bottom" secondItem="fmH-f9-1vV" secondAttribute="bottom" constant="10" id="1V0-DR-mPq"/>
+                                            <constraint firstItem="qbM-eb-p6t" firstAttribute="top" secondItem="fmH-f9-1vV" secondAttribute="top" constant="5" id="79z-M7-eGx"/>
+                                            <constraint firstItem="5gS-pH-ovn" firstAttribute="centerX" secondItem="vwH-eu-8kU" secondAttribute="centerX" id="PUv-6F-BTn"/>
+                                            <constraint firstItem="5gS-pH-ovn" firstAttribute="top" secondItem="vwH-eu-8kU" secondAttribute="bottom" id="QCm-nE-dzG"/>
+                                            <constraint firstItem="qbM-eb-p6t" firstAttribute="leading" secondItem="fmH-f9-1vV" secondAttribute="leading" constant="5" id="Rin-HS-8Oq"/>
+                                            <constraint firstItem="1zy-fe-iLs" firstAttribute="trailing" secondItem="fmH-f9-1vV" secondAttribute="trailing" id="Th3-qa-oSV"/>
+                                            <constraint firstItem="vwH-eu-8kU" firstAttribute="centerY" secondItem="fmH-f9-1vV" secondAttribute="centerY" id="UsS-vt-P3Z"/>
+                                            <constraint firstItem="1zy-fe-iLs" firstAttribute="bottom" secondItem="fmH-f9-1vV" secondAttribute="bottom" id="b36-iI-26F"/>
                                             <constraint firstItem="fmH-f9-1vV" firstAttribute="leading" secondItem="pjC-8F-z6q" secondAttribute="leading" constant="30" id="b4X-pT-x30"/>
                                             <constraint firstAttribute="trailing" secondItem="fmH-f9-1vV" secondAttribute="trailing" constant="30" id="e5D-w6-BfA"/>
                                             <constraint firstAttribute="height" constant="180" id="ftw-Ca-kwM"/>
@@ -1557,6 +1594,7 @@
         <image name="no_transactions_mascot" width="87" height="106"/>
         <image name="stat_border" width="155" height="155"/>
         <image name="stat_border_small-1" width="62" height="62"/>
+        <image name="white_add_sign" width="53" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="btG-p5-Pj1"/>
