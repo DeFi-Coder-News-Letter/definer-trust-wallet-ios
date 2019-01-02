@@ -7,7 +7,7 @@ target 'Trust' do
   use_frameworks!
 
   pod 'BigInt', '~> 3.0'
-  pod 'R.swift'
+  pod 'R.swift', '~> 4.0'
   pod 'JSONRPCKit', :git=> 'https://github.com/bricklife/JSONRPCKit.git'
   pod 'PromiseKit', '~> 6.0'
   pod 'APIKit'
@@ -24,7 +24,7 @@ target 'Trust' do
   pod 'Kingfisher', '~> 4.0'
   pod 'TrustCore', :git=>'https://github.com/TrustWallet/trust-core', :branch=>'master'
   pod 'TrustKeystore', :git=>'https://github.com/TrustWallet/trust-keystore', :branch=>'master'
-  pod 'TrezorCrypto'
+  pod 'TrezorCrypto', '~> 0.0.9'
   pod 'Branch'
   pod 'SAMKeychain'
   pod 'TrustWeb3Provider', :git=>'https://github.com/TrustWallet/trust-web3-provider', :commit=>'fa8d392179e1dec972d1ac4901c74c4de3da91b0'
