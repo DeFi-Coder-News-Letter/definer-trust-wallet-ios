@@ -2,15 +2,16 @@ PODS:
   - Alamofire (4.6.0)
   - APIKit (3.1.1):
     - Result (~> 3.0)
-  - BigInt (3.0.1):
+  - BigInt (3.1.0):
     - SipHash (~> 1.2)
   - Branch (0.25.3):
     - Branch/Core (= 0.25.3)
   - Branch/Core (0.25.3)
-  - CryptoSwift (0.10.0)
+  - CryptoSwift (0.13.1)
   - Eureka (4.2.0)
   - JSONRPCKit (2.0.0):
     - Result (~> 3.0)
+  - keccak.c (0.1.3)
   - KeychainSwift (10.0.0)
   - Kingfisher (4.8.1)
   - MBProgressHUD (1.1.0)
@@ -19,14 +20,14 @@ PODS:
   - Moya/Core (10.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - PromiseKit (6.3.4):
-    - PromiseKit/CorePromise (= 6.3.4)
-    - PromiseKit/Foundation (= 6.3.4)
-    - PromiseKit/UIKit (= 6.3.4)
-  - PromiseKit/CorePromise (6.3.4)
-  - PromiseKit/Foundation (6.3.4):
+  - PromiseKit (6.7.1):
+    - PromiseKit/CorePromise (= 6.7.1)
+    - PromiseKit/Foundation (= 6.7.1)
+    - PromiseKit/UIKit (= 6.7.1)
+  - PromiseKit/CorePromise (6.7.1)
+  - PromiseKit/Foundation (6.7.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.3.4):
+  - PromiseKit/UIKit (6.7.1):
     - PromiseKit/CorePromise
   - QRCodeReaderViewController (4.0.2)
   - R.swift (4.0.0):
@@ -39,8 +40,10 @@ PODS:
     - Realm (= 3.7.6)
   - Result (3.2.4)
   - SAMKeychain (1.5.3)
+  - scrypt.c (0.1.1)
+  - secp256k1.c (0.1.2)
   - SeedStackViewController (0.4.0)
-  - SipHash (1.2.0)
+  - SipHash (1.2.2)
   - StatefulViewController (3.0)
   - SwiftLint (0.27.0)
   - TrezorCrypto (0.0.9)
@@ -57,19 +60,25 @@ PODS:
     - TrustCore
   - TrustWeb3Provider (0.2.1)
   - URLNavigator (2.0.6)
+  - web3swift.pod (2.1.3):
+    - BigInt (~> 3.1)
+    - keccak.c (~> 0.1)
+    - PromiseKit (~> 6.4)
+    - scrypt.c (~> 0.1)
+    - secp256k1.c (~> 0.1)
 
 DEPENDENCIES:
   - APIKit
-  - BigInt (~> 3.0)
+  - BigInt (~> 3.1)
   - Branch
-  - CryptoSwift (~> 0.10.0)
+  - CryptoSwift (~> 0.13.1)
   - Eureka
   - JSONRPCKit (from `https://github.com/bricklife/JSONRPCKit.git`)
   - KeychainSwift
   - Kingfisher (~> 4.0)
   - MBProgressHUD
   - Moya (~> 10.0.1)
-  - PromiseKit (~> 6.0)
+  - PromiseKit (~> 6.4)
   - QRCodeReaderViewController (from `https://github.com/yannickl/QRCodeReaderViewController.git`, branch `master`)
   - R.swift (~> 4.0)
   - RealmSwift
@@ -83,6 +92,7 @@ DEPENDENCIES:
   - TrustWalletSDK (from `https://github.com/TrustWallet/TrustSDK-iOS`, branch `master`)
   - TrustWeb3Provider (from `https://github.com/TrustWallet/trust-web3-provider`, commit `fa8d392179e1dec972d1ac4901c74c4de3da91b0`)
   - URLNavigator
+  - web3swift.pod
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -92,6 +102,7 @@ SPEC REPOS:
     - Branch
     - CryptoSwift
     - Eureka
+    - keccak.c
     - KeychainSwift
     - Kingfisher
     - MBProgressHUD
@@ -103,12 +114,15 @@ SPEC REPOS:
     - RealmSwift
     - Result
     - SAMKeychain
+    - scrypt.c
+    - secp256k1.c
     - SeedStackViewController
     - SipHash
     - StatefulViewController
     - SwiftLint
     - TrezorCrypto
     - URLNavigator
+    - web3swift.pod
 
 EXTERNAL SOURCES:
   JSONRPCKit:
@@ -152,16 +166,17 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
-  BigInt: 8e8a52161c745cd3ab78e3dc346a9fbee51e6cf6
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   Branch: 9917f91a5381bc88ed8e4f080a18213267cf44e6
-  CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
+  CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
   Eureka: 0748c7bbb2560130e43c7bfa83e99c98854a1f42
   JSONRPCKit: 22132c575ba2dc6f2f4ae72fda4943a63efca686
+  keccak.c: 859583afdaccb4e4fcc0f0096064d101580313f4
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
-  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
+  PromiseKit: ef376fb8b4e92edfeb66bd403b983eaa07fbde0c
   QRCodeReaderViewController: e8f27d035b3e72b1d4b1c61ff66458287e3be0ff
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
@@ -169,8 +184,10 @@ SPEC CHECKSUMS:
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  scrypt.c: b42ae06183251329d2b2c620c226fb541a4a3592
+  secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   SeedStackViewController: 45e88ca1493a610e74d661d3feced7098f72dbd3
-  SipHash: c6e9e43e9c531b5bc6602545130c26194a6d31ce
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   TrezorCrypto: bfeea47a052dca2c77d4a39e1e183865e52de14d
@@ -179,7 +196,8 @@ SPEC CHECKSUMS:
   TrustWalletSDK: 12451433bda69bc07e5a27408449b1f4692879e4
   TrustWeb3Provider: 6dd75e1d73b02d87f5993049a025929032963157
   URLNavigator: 2357a32f3b3787b748bf87deb927761f8b0f7f53
+  web3swift.pod: e032ea5dd43810ab32c8f293ad5e3dd508c452dd
 
-PODFILE CHECKSUM: 620106356b0d8e186d97f1b32f5cf92ebe9f360a
+PODFILE CHECKSUM: 9ef0ca7b0aa94d6c10dc3077e8a2b108361c8c15
 
 COCOAPODS: 1.5.3
